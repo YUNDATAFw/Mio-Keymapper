@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="io.takamiya.mio.navigation.HomeFragment"
+        android:label="主页" />
+
+    <fragment
+        android:id="@+id/plugin"
+        android:name="io.takamiya.mio.navigation.PluginFragment"
+        android:label="插件" />
+
+    <fragment
+        android:id="@+id/config"
+        android:name="io.takamiya.mio.navigation.ConfigFragment"
+        android:label="配置" />
+
+    <fragment
+        android:id="@+id/forum"
+        android:name="io.takamiya.mio.navigation.ForumFragment"
+        android:label="论坛" />
+
+    <fragment
+        android:id="@+id/user"
+        android:name="io.takamiya.mio.navigation.UserFragment"
+        android:label="账户" />
+
+    <fragment
+        android:id="@+id/setting"
+        android:name="io.takamiya.mio.navigation.SettingFragment"
+        android:label="设置" />
+
+    <fragment
+        android:id="@+id/sound_settings"
+        android:name="io.takamiya.mio.navigation.SoundSettingsFragment"
+        android:label="音效设置" />
+
+    <fragment
+        android:id="@+id/crosshair_settings"
+        android:name="io.takamiya.mio.navigation.CrosshairSettingsFragment"
+        android:label="准星设置" />
+
+    <fragment
+        android:id="@+id/building_list"
+        android:name="io.takamiya.mio.navigation.BuildingListFragment"
+        android:label="建筑列表" />
+
+    <fragment
+        android:id="@+id/import_settings"
+        android:name="io.takamiya.mio.navigation.ImportSettingsFragment"
+        android:label="导入设置" />
+</navigation>

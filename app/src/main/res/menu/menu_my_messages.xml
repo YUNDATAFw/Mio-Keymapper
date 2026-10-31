@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_mark_all_read"
+        android:icon="@drawable/material_symbols_check_circle_outline_rounded"
+        android:title="一键已读"
+        android:contentDescription="一键已读"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_clear_all"
+        android:icon="@drawable/material_symbols_delete_outline_rounded"
+        android:title="清空"
+        android:contentDescription="清空"
+        app:showAsAction="ifRoom" />
+</menu>

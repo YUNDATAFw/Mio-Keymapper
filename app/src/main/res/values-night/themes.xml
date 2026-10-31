@@ -1,0 +1,74 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme — dark variant. -->
+    <style name="Base.Theme.澪" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <!-- Primary -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/colorOnPrimaryContainer</item>
+
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/colorOnSecondaryContainer</item>
+
+        <!-- Tertiary -->
+        <item name="colorTertiary">@color/colorTertiary</item>
+        <item name="colorOnTertiary">@color/colorOnTertiary</item>
+        <item name="colorTertiaryContainer">@color/colorTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/colorOnTertiaryContainer</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/colorError</item>
+        <item name="colorOnError">@color/colorOnError</item>
+        <item name="colorErrorContainer">@color/colorErrorContainer</item>
+        <item name="colorOnErrorContainer">@color/colorOnErrorContainer</item>
+
+        <!-- Surface -->
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorSurfaceTint">@color/colorSurfaceTint</item>
+        <item name="colorSurfaceVariant">@color/colorSurfaceVariant</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <item name="colorOnSurfaceVariant">@color/colorOnSurfaceVariant</item>
+        <item name="colorSurfaceContainer">@color/colorSurfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/colorSurfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/colorSurfaceContainerHighest</item>
+        <item name="colorSurfaceContainerLow">@color/colorSurfaceContainerLow</item>
+        <item name="colorSurfaceContainerLowest">@color/colorSurfaceContainerLowest</item>
+        <item name="colorSurfaceBright">@color/colorSurfaceBright</item>
+        <item name="colorSurfaceDim">@color/colorSurfaceDim</item>
+
+        <!-- Background -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+
+        <!-- Outline -->
+        <item name="colorOutline">@color/colorOutline</item>
+        <item name="colorOutlineVariant">@color/colorOutlineVariant</item>
+
+        <!-- Scrim -->
+        <item name="colorScrim">@color/colorScrim</item>
+
+        <!-- Typography -->
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.Mio.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.Mio.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.Mio.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Mio.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.Mio.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.Mio.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Mio.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Mio.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Mio.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Mio.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Mio.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Mio.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Mio.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Mio.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.Mio.LabelSmall</item>
+    </style>
+</resources>

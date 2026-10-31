@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:id="@+id/headerRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/material_symbols_data_object_rounded"
+                    app:tint="@color/colorOnSurface" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvHeaderTitle"
+                    style="?attr/textAppearanceTitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:text="按键活动"
+                    android:textColor="@color/colorOnSurface"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnToggleCollapse"
+                    style="?attr/materialIconButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/material_symbols_arrow_drop_down_rounded"
+                    app:iconTint="@color/colorOnSurface" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/previewSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="6dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDescription"
+                    style="?attr/textAppearanceBodyMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorOnSecondaryContainer" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/groupBadgeCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvGroupBadge"
+                        style="?attr/textAppearanceLabelMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorSecondaryContainer"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="2dp"
+                        android:text="aaa"
+                        android:textColor="@color/colorOnSecondaryContainer" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/collapseContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/editSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:hint="活动名称"
+                        app:boxStrokeWidth="2dp"
+                        app:boxStrokeWidthFocused="3dp"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etActionName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textAppearance="?attr/textAppearanceLabelMedium" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:hint="说明"
+                        app:boxStrokeWidth="2dp"
+                        app:boxStrokeWidthFocused="3dp"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etActionDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:textAppearance="?attr/textAppearanceLabelMedium" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large"
+                        app:strokeColor="@color/colorOutline"
+                        app:strokeWidth="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="6dp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="快捷键类型"
+                                android:textAppearance="?attr/textAppearanceLabelMedium"
+                                android:textColor="@color/colorOnSurfaceVariant" />
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/chipGroupTrigger"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:singleSelection="true">
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipButton"
+                                    style="@style/Widget.Material3.Chip.Filter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="按钮"
+                                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipSwitch"
+                                    style="@style/Widget.Material3.Chip.Filter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="开关"
+                                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipPressurePlate"
+                                    style="@style/Widget.Material3.Chip.Filter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="压力板"
+                                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+                            </com.google.android.material.chip.ChipGroup>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:id="@+id/pressurePlateSettingsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:hint="长按阈值 (ms)"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etHoldThreshold"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            android:hint="松开延迟 (ms)"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etReleaseDelay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="1"
+                            android:hint="活动ID"
+                            app:boxStrokeWidth="2dp"
+                            app:boxStrokeWidthFocused="3dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etActionId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"
+                                android:textAppearance="?attr/textAppearanceLabelMedium" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="1"
+                            android:hint="分组（Tab，留空=默认分类）"
+                            app:boxStrokeWidth="2dp"
+                            app:boxStrokeWidthFocused="3dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etActionGroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"
+                                android:textAppearance="?attr/textAppearanceLabelMedium" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButtonGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:overflowMode="menu">
+
+                    <Button
+                        android:id="@+id/btnEventEngineStart"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="引擎注册事件"
+                        app:icon="@drawable/material_symbols_edit_outline_rounded"
+                        app:iconGravity="textStart" />
+
+                    <Button
+                        android:id="@+id/btnEventEngineStop"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="引擎注销事件"
+                        app:icon="@drawable/material_symbols_edit_outline_rounded"
+                        app:iconGravity="textStart" />
+
+                    <Button
+                        android:id="@+id/btnEventShortcutBarShow"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="页面存在快捷键事件"
+                        app:icon="@drawable/material_symbols_edit_outline_rounded"
+                        app:iconGravity="textStart" />
+
+                    <Button
+                        android:id="@+id/btnEventShortcutBarHide"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="页面无快捷键事件"
+                        app:icon="@drawable/material_symbols_edit_outline_rounded"
+                        app:iconGravity="textStart" />
+                </com.google.android.material.button.MaterialButtonGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnEditAction"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="活动编辑"
+                        app:icon="@drawable/material_symbols_edit_outline_rounded"
+                        app:iconGravity="textStart" />
+
+                    <Button
+                        android:id="@+id/btnEditEvents"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="事件编辑"
+                        app:icon="@drawable/material_symbols_edit_outline_rounded"
+                        app:iconGravity="textStart" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnDeleteAction"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="@color/colorErrorContainer"
+                        android:text="删除活动"
+                        android:textColor="@color/colorError"
+                        app:icon="@drawable/material_symbols_delete_outline_rounded"
+                        app:iconTint="@color/colorError" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

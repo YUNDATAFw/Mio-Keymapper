@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorSurfaceTint" format="color" />
+    <attr name="colorScrim" format="color" />
+</resources>

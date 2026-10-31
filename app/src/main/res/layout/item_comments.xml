@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:id="@+id/commentAuthorAvatar"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/commentAuthorNickname"
+                        android:text="作者昵称"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="@color/colorOnSecondaryContainer" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        app:cardBackgroundColor="@color/colorSecondaryContainer"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingHorizontal="3dp"
+                            android:paddingVertical="1dp"
+                            android:id="@+id/commentAuthorLevelTitle"
+                            android:text="LV.0"
+                            android:textAppearance="?attr/textAppearanceLabelSmall"
+                            android:textColor="@color/colorSecondary" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="6dp"
+                    android:id="@+id/commentContent"
+                    android:text="内容"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="@color/colorOnSurface" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/commentTime"
+                        android:text="时间"
+                        android:textAppearance="?attr/textAppearanceLabelMedium"
+                        android:textColor="@color/colorSecondary" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:id="@+id/commentReplyBtn"
+                        android:textStyle="bold"
+                        android:text="回复"
+                        android:textAppearance="?attr/textAppearanceLabelMedium"
+                        android:textColor="@color/colorOnSecondaryContainer" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical|end">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:padding="4dp"
+                            android:id="@+id/commentLikeBtn"
+                            app:srcCompat="@drawable/material_symbols_favorite_outline_rounded"
+                            app:tint="@color/colorOnSecondaryContainer"/>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/commentLikeCount"
+                            android:textStyle="bold"
+                            android:text="0"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="@color/colorOnSecondaryContainer" />
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:padding="4dp"
+                            android:layout_marginStart="3dp"
+                            android:id="@+id/commentMoreBtn"
+                            app:srcCompat="@drawable/material_symbols_info_outline_rounded"
+                            app:tint="@color/colorOnSecondaryContainer"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/repliesCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:visibility="gone">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="3dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/replyToggle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/replyToggleText"
+                                android:textStyle="bold"
+                                android:text="相关回复"
+                                android:textAppearance="?attr/textAppearanceLabelMedium"
+                                android:textColor="@color/colorOnSecondaryContainer" />
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:id="@+id/replyToggleArrow"
+                                app:srcCompat="@drawable/material_symbols_arrow_left_rounded"
+                                app:tint="@color/colorOnSecondaryContainer"/>
+                        </LinearLayout>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/repliesRecyclerView"
+                            android:padding="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:listitem="@layout/item_replies"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <View
+                    android:id="@+id/commentDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorOutline"
+                    android:layout_marginVertical="6dp"
+                    android:layout_marginHorizontal="12dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

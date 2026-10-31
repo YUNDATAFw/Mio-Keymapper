@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/permission_management"
+        android:title="@string/permission_management"
+        android:icon="@drawable/material_symbols_permdevice_information_outline_rounded"
+        android:contentDescription="@string/permission_management"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/terms_of_service"
+        android:title="@string/terms_of_service"
+        android:icon="@drawable/material_symbols_description_outline_rounded"
+        android:contentDescription="@string/terms_of_service"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/open_source_license"
+        android:title="@string/open_source_license"
+        android:icon="@drawable/material_symbols_code_rounded"
+        android:contentDescription="@string/open_source_license"
+        app:showAsAction="never"/>
+</menu>

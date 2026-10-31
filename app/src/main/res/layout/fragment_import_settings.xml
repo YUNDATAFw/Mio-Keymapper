@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/import_settings_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:padding="16dp"
+           android:orientation="vertical">
+           <com.google.android.material.card.MaterialCardView
+               style="@style/Widget.Material3.CardView.Outlined"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+               app:cardCornerRadius="16dp"
+               app:cardElevation="0dp"
+               app:strokeColor="?attr/colorOutlineVariant"
+               app:strokeWidth="1dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:padding="16dp">
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+
+                       <com.google.android.material.card.MaterialCardView
+                          
+                           android:layout_width="44dp"
+                           android:layout_height="44dp"
+                           app:cardBackgroundColor="@color/colorSecondaryContainer"
+                           app:cardCornerRadius="14dp"
+                           app:cardElevation="0dp"
+                           app:strokeWidth="0dp">
+
+                           <com.google.android.material.imageview.ShapeableImageView
+                               
+                               android:layout_width="24dp"
+                               android:layout_height="24dp"
+                               android:layout_gravity="center"
+                               android:importantForAccessibility="no"
+                               android:tint="@color/colorOnSecondaryContainer"
+                               app:srcCompat="@drawable/material_symbols_design_services_outline_rounded" />
+                       </com.google.android.material.card.MaterialCardView>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="14dp"
+                           android:orientation="vertical">
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceTitleMedium"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:ellipsize="end"
+                               android:maxLines="2"
+                               android:text="方块类型 点击"
+                               android:textColor="?attr/colorOnSurface" />
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceBodySmall"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="2dp"
+                               android:ellipsize="end"
+                               android:maxLines="3"
+                               android:text="打开方块类型菜单的点击坐标"
+                               android:textColor="?attr/colorOnSurfaceVariant" />
+                       </LinearLayout>
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginEnd="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="X 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_block_type_x"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="Y 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_block_type_y"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                   </LinearLayout>
+               </LinearLayout>
+           </com.google.android.material.card.MaterialCardView>
+
+
+           <com.google.android.material.card.MaterialCardView
+               style="@style/Widget.Material3.CardView.Outlined"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+               app:cardCornerRadius="16dp"
+               app:cardElevation="0dp"
+               app:strokeColor="?attr/colorOutlineVariant"
+               app:strokeWidth="1dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:padding="16dp">
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+
+                       <com.google.android.material.card.MaterialCardView
+                          
+                           android:layout_width="44dp"
+                           android:layout_height="44dp"
+                           app:cardBackgroundColor="@color/colorSecondaryContainer"
+                           app:cardCornerRadius="14dp"
+                           app:cardElevation="0dp"
+                           app:strokeWidth="0dp">
+
+                           <com.google.android.material.imageview.ShapeableImageView
+                               
+                               android:layout_width="24dp"
+                               android:layout_height="24dp"
+                               android:layout_gravity="center"
+                               android:importantForAccessibility="no"
+                               android:tint="@color/colorOnSecondaryContainer"
+                               app:srcCompat="@drawable/material_symbols_design_services_outline_rounded" />
+                       </com.google.android.material.card.MaterialCardView>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="14dp"
+                           android:orientation="vertical">
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceTitleMedium"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:ellipsize="end"
+                               android:maxLines="2"
+                               android:text="重复 点击"
+                               android:textColor="?attr/colorOnSurface" />
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceBodySmall"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="2dp"
+                               android:ellipsize="end"
+                               android:maxLines="3"
+                               android:text="选择循环类型的点击坐标"
+                               android:textColor="?attr/colorOnSurfaceVariant" />
+                       </LinearLayout>
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginEnd="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="X 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_repeat_x"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="Y 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_repeat_y"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                   </LinearLayout>
+               </LinearLayout>
+           </com.google.android.material.card.MaterialCardView>
+
+           <com.google.android.material.card.MaterialCardView
+               style="@style/Widget.Material3.CardView.Outlined"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+               app:cardCornerRadius="16dp"
+               app:cardElevation="0dp"
+               app:strokeColor="?attr/colorOutlineVariant"
+               app:strokeWidth="1dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:padding="16dp">
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+
+                       <com.google.android.material.card.MaterialCardView
+                          
+                           android:layout_width="44dp"
+                           android:layout_height="44dp"
+                           app:cardBackgroundColor="@color/colorSecondaryContainer"
+                           app:cardCornerRadius="14dp"
+                           app:cardElevation="0dp"
+                           app:strokeWidth="0dp">
+
+                           <com.google.android.material.imageview.ShapeableImageView
+                               
+                               android:layout_width="24dp"
+                               android:layout_height="24dp"
+                               android:layout_gravity="center"
+                               android:importantForAccessibility="no"
+                               android:tint="@color/colorOnSecondaryContainer"
+                               app:srcCompat="@drawable/material_symbols_design_services_outline_rounded" />
+                       </com.google.android.material.card.MaterialCardView>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="14dp"
+                           android:orientation="vertical">
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceTitleMedium"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:ellipsize="end"
+                               android:maxLines="2"
+                               android:text="连锁 点击"
+                               android:textColor="?attr/colorOnSurface" />
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceBodySmall"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="2dp"
+                               android:ellipsize="end"
+                               android:maxLines="3"
+                               android:text="选择连锁类型的点击坐标"
+                               android:textColor="?attr/colorOnSurfaceVariant" />
+                       </LinearLayout>
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginEnd="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="X 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_chain_x"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="Y 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_chain_y"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                   </LinearLayout>
+               </LinearLayout>
+           </com.google.android.material.card.MaterialCardView>
+
+           <com.google.android.material.card.MaterialCardView
+               style="@style/Widget.Material3.CardView.Outlined"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+               app:cardCornerRadius="16dp"
+               app:cardElevation="0dp"
+               app:strokeColor="?attr/colorOutlineVariant"
+               app:strokeWidth="1dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:padding="16dp">
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+
+                       <com.google.android.material.card.MaterialCardView
+                          
+                           android:layout_width="44dp"
+                           android:layout_height="44dp"
+                           app:cardBackgroundColor="@color/colorSecondaryContainer"
+                           app:cardCornerRadius="14dp"
+                           app:cardElevation="0dp"
+                           app:strokeWidth="0dp">
+
+                           <com.google.android.material.imageview.ShapeableImageView
+                               
+                               android:layout_width="24dp"
+                               android:layout_height="24dp"
+                               android:layout_gravity="center"
+                               android:importantForAccessibility="no"
+                               android:tint="@color/colorOnSecondaryContainer"
+                               app:srcCompat="@drawable/material_symbols_design_services_outline_rounded" />
+                       </com.google.android.material.card.MaterialCardView>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="14dp"
+                           android:orientation="vertical">
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceTitleMedium"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:ellipsize="end"
+                               android:maxLines="2"
+                               android:text="激活方式 点击"
+                               android:textColor="?attr/colorOnSurface" />
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceBodySmall"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="2dp"
+                               android:ellipsize="end"
+                               android:maxLines="3"
+                               android:text="打开激活方式菜单的点击坐标"
+                               android:textColor="?attr/colorOnSurfaceVariant" />
+                       </LinearLayout>
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginEnd="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="X 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_activation_x"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="Y 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_activation_y"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                   </LinearLayout>
+               </LinearLayout>
+           </com.google.android.material.card.MaterialCardView>
+
+
+           <com.google.android.material.card.MaterialCardView
+               style="@style/Widget.Material3.CardView.Outlined"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+               app:cardCornerRadius="16dp"
+               app:cardElevation="0dp"
+               app:strokeColor="?attr/colorOutlineVariant"
+               app:strokeWidth="1dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:padding="16dp">
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+
+                       <com.google.android.material.card.MaterialCardView
+                          
+                           android:layout_width="44dp"
+                           android:layout_height="44dp"
+                           app:cardBackgroundColor="@color/colorSecondaryContainer"
+                           app:cardCornerRadius="14dp"
+                           app:cardElevation="0dp"
+                           app:strokeWidth="0dp">
+
+                           <com.google.android.material.imageview.ShapeableImageView
+                               
+                               android:layout_width="24dp"
+                               android:layout_height="24dp"
+                               android:layout_gravity="center"
+                               android:importantForAccessibility="no"
+                               android:tint="@color/colorOnSecondaryContainer"
+                               app:srcCompat="@drawable/material_symbols_design_services_outline_rounded" />
+                       </com.google.android.material.card.MaterialCardView>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="14dp"
+                           android:orientation="vertical">
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceTitleMedium"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:ellipsize="end"
+                               android:maxLines="2"
+                               android:text="保持开启 点击"
+                               android:textColor="?attr/colorOnSurface" />
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceBodySmall"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="2dp"
+                               android:ellipsize="end"
+                               android:maxLines="3"
+                               android:text="选择保持开启的点击坐标"
+                               android:textColor="?attr/colorOnSurfaceVariant" />
+                       </LinearLayout>
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginEnd="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="X 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_keep_on_x"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="Y 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_keep_on_y"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                   </LinearLayout>
+               </LinearLayout>
+           </com.google.android.material.card.MaterialCardView>
+
+           <com.google.android.material.card.MaterialCardView
+               style="@style/Widget.Material3.CardView.Outlined"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+               app:cardCornerRadius="16dp"
+               app:cardElevation="0dp"
+               app:strokeColor="?attr/colorOutlineVariant"
+               app:strokeWidth="1dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:padding="16dp">
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+
+                       <com.google.android.material.card.MaterialCardView
+                          
+                           android:layout_width="44dp"
+                           android:layout_height="44dp"
+                           app:cardBackgroundColor="@color/colorSecondaryContainer"
+                           app:cardCornerRadius="14dp"
+                           app:cardElevation="0dp"
+                           app:strokeWidth="0dp">
+
+                           <com.google.android.material.imageview.ShapeableImageView
+                               
+                               android:layout_width="24dp"
+                               android:layout_height="24dp"
+                               android:layout_gravity="center"
+                               android:importantForAccessibility="no"
+                               android:tint="@color/colorOnSecondaryContainer"
+                               app:srcCompat="@drawable/material_symbols_design_services_outline_rounded" />
+                       </com.google.android.material.card.MaterialCardView>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="14dp"
+                           android:orientation="vertical">
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceTitleMedium"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:ellipsize="end"
+                               android:maxLines="2"
+                               android:text="命令编辑框 点击"
+                               android:textColor="?attr/colorOnSurface" />
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceBodySmall"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="2dp"
+                               android:ellipsize="end"
+                               android:maxLines="3"
+                               android:text="命令编辑框的点击坐标"
+                               android:textColor="?attr/colorOnSurfaceVariant" />
+                       </LinearLayout>
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginEnd="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="X 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_command_edit_x"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="Y 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_command_edit_y"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                   </LinearLayout>
+               </LinearLayout>
+           </com.google.android.material.card.MaterialCardView>
+
+           <com.google.android.material.card.MaterialCardView
+               style="@style/Widget.Material3.CardView.Outlined"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+               app:cardCornerRadius="16dp"
+               app:cardElevation="0dp"
+               app:strokeColor="?attr/colorOutlineVariant"
+               app:strokeWidth="1dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:padding="16dp">
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+
+                       <com.google.android.material.card.MaterialCardView
+
+                           android:layout_width="44dp"
+                           android:layout_height="44dp"
+                           app:cardBackgroundColor="@color/colorSecondaryContainer"
+                           app:cardCornerRadius="14dp"
+                           app:cardElevation="0dp"
+                           app:strokeWidth="0dp">
+
+                           <com.google.android.material.imageview.ShapeableImageView
+
+                               android:layout_width="24dp"
+                               android:layout_height="24dp"
+                               android:layout_gravity="center"
+                               android:importantForAccessibility="no"
+                               android:tint="@color/colorOnSecondaryContainer"
+                               app:srcCompat="@drawable/material_symbols_design_services_outline_rounded" />
+                       </com.google.android.material.card.MaterialCardView>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="14dp"
+                           android:orientation="vertical">
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceTitleMedium"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:ellipsize="end"
+                               android:maxLines="2"
+                               android:text="关闭命令面板 点击"
+                               android:textColor="?attr/colorOnSurface" />
+
+                           <com.google.android.material.textview.MaterialTextView
+                               style="?attr/textAppearanceBodySmall"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="2dp"
+                               android:ellipsize="end"
+                               android:maxLines="3"
+                               android:text="关闭命令面板的点击坐标"
+                               android:textColor="?attr/colorOnSurfaceVariant" />
+                       </LinearLayout>
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginEnd="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="X 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_close_panel_x"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                       <com.google.android.material.textfield.TextInputLayout
+                           style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="3dp"
+                           android:layout_weight="1"
+                           app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                           android:layout_marginTop="14dp"
+                           android:hint="Y 坐标">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/et_close_panel_y"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:imeOptions="actionDone"
+                               android:inputType="text"
+                               android:maxLines="1"
+                               android:singleLine="true" />
+                       </com.google.android.material.textfield.TextInputLayout>
+                   </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="?attr/colorOutlineVariant"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            app:cardBackgroundColor="@color/colorSecondaryContainer"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:importantForAccessibility="no"
+                                android:tint="@color/colorOnSecondaryContainer"
+                                app:srcCompat="@drawable/material_symbols_history_rounded" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="?attr/textAppearanceTitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="执行时序"
+                                android:textColor="?attr/colorOnSurface" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="?attr/textAppearanceBodySmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:maxLines="3"
+                                android:text="各步骤之间的等待与点击按压时长（毫秒）。改小可能在动画完成前点击，改大整体变慢"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:layout_weight="1"
+                            app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                            android:layout_marginTop="14dp"
+                            android:hint="步进间隔">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_delay_step"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_weight="1"
+                            app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                            android:layout_marginTop="14dp"
+                            android:hint="面板打开等待">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_delay_panel_open"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:layout_weight="1"
+                            app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                            android:layout_marginTop="10dp"
+                            android:hint="下拉展开等待">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_delay_list_open"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_weight="1"
+                            app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                            android:layout_marginTop="10dp"
+                            android:hint="输入焦点等待">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_delay_edit_focus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerLarge"
+                        android:layout_marginTop="10dp"
+                        android:hint="点击按压时长">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_press_duration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+   </androidx.core.widget.NestedScrollView>
+</FrameLayout>
+

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="24dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/itemActionSheetTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="20dp"
+        android:text="操作"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textColor="@color/colorOnSurface" />
+
+    <LinearLayout
+        android:id="@+id/topRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/material_symbols_offline_pin_outline_rounded"
+            app:tint="@color/colorOnSecondaryContainer" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTopText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="置顶"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="@color/colorOnSecondaryContainer" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/recommendRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/material_symbols_award_star_outline_rounded"
+            app:tint="@color/colorOnSecondaryContainer" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvRecommendText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="推荐"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="@color/colorOnSecondaryContainer" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/material_symbols_edit_outline_rounded"
+            app:tint="@color/colorOnSecondaryContainer" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="修改"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="@color/colorOnSecondaryContainer" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/deleteRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/material_symbols_delete_outline_rounded"
+            app:tint="@color/colorError" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDeleteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="删除"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="@color/colorError" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/reportRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/material_symbols_block_outline"
+            app:tint="@color/colorOnSecondaryContainer" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvReportText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="举报"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="@color/colorOnSecondaryContainer" />
+    </LinearLayout>
+</LinearLayout>

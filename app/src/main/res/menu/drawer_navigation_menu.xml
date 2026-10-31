@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="导航">
+        <menu>
+            <item
+                android:id="@+id/home"
+                android:checkable="true"
+                android:icon="@drawable/material_symbols_near_me_outline_rounded"
+                android:title="主页" />
+            <item
+                android:id="@+id/plugin"
+                android:checkable="true"
+                android:icon="@drawable/material_symbols_description_outline_rounded"
+                android:title="插件" />
+            <item
+                android:id="@+id/config"
+                android:checkable="true"
+                android:icon="@drawable/material_symbols_build_outline_rounded"
+                android:title="配置" />
+            <item
+                android:id="@+id/forum"
+                android:checkable="true"
+                android:icon="@drawable/material_symbols_numbers_rounded"
+                android:title="论坛" />
+            <item
+                android:id="@+id/user"
+                android:checkable="true"
+                android:icon="@drawable/material_symbols_account_circle_outline"
+                android:title="账户" />
+        </menu>
+    </item>
+
+    <item android:title="建筑">
+        <menu>
+            <item
+                android:id="@+id/building_list"
+                android:checkable="true"
+                android:icon="@drawable/material_symbols_architecture_rounded"
+                android:title="建筑列表" />
+            <item
+                android:id="@+id/import_settings"
+                android:checkable="true"
+                android:icon="@drawable/material_symbols_download_2_outline_rounded"
+                android:title="导入设置" />
+        </menu>
+    </item>
+
+    <item android:title="设置">
+        <menu>
+            <item
+                android:id="@+id/setting"
+                android:checkable="true"
+                android:icon="@drawable/material_symbols_brightness_5_outline_rounded"
+                android:title="设置" />
+            <item
+                android:id="@+id/sound_settings"
+                android:checkable="true"
+                android:icon="@drawable/material_symbols_play_arrow_rounded"
+                android:title="音效设置" />
+            <item
+                android:id="@+id/crosshair_settings"
+                android:checkable="true"
+                android:icon="@drawable/material_symbols_add_2_rounded"
+                android:title="准星设置" />
+        </menu>
+    </item>
+</menu>

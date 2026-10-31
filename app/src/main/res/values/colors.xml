@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#FF4D59A0</color>
+    <color name="colorOnPrimary">#FFF4F2FF</color>
+    <color name="colorPrimaryContainer">#FFDEE0FF</color>
+    <color name="colorOnPrimaryContainer">#FF354187</color>
+    <color name="colorSecondary">#FF5B5D6F</color>
+    <color name="colorOnSecondary">#FFF4F2FF</color>
+    <color name="colorSecondaryContainer">#FFE0E1F7</color>
+    <color name="colorOnSecondaryContainer">#FF444657</color>
+    <color name="colorTertiary">#FF74556B</color>
+    <color name="colorOnTertiary">#FFFFF0F7</color>
+    <color name="colorTertiaryContainer">#FFFFD7F1</color>
+    <color name="colorOnTertiaryContainer">#FF5B3D53</color>
+    <color name="colorError">#FF892345</color>
+    <color name="colorOnError">#FFFFC2C7</color>
+    <color name="colorErrorContainer">#FFF8B4C0</color>
+    <color name="colorOnErrorContainer">#FF6F0022</color>
+    <color name="colorSurface">#FFF9F5F9</color>
+    <color name="colorSurfaceTint">#FF4D59A0</color>
+    <color name="colorSurfaceVariant">#FFD6D3DB</color>
+    <color name="colorOnSurface">#FF1B1B1E</color>
+    <color name="colorOnSurfaceVariant">#FF47464A</color>
+    <color name="colorSurfaceContainer">#FFE8E4EA</color>
+    <color name="colorSurfaceContainerHigh">#FFDFDBE3</color>
+    <color name="colorSurfaceContainerHighest">#FFD6D3DB</color>
+    <color name="colorSurfaceContainerLow">#FFF0EDF2</color>
+    <color name="colorSurfaceContainerLowest">#FFFFFFFF</color>
+    <color name="colorSurfaceBright">#FFFFFBFF</color>
+    <color name="colorSurfaceDim">#FFCECBD3</color>
+    <color name="colorBackground">#FFF9F5F9</color>
+    <color name="colorOnBackground">#FF1B1B1E</color>
+    <color name="colorOutline">#FF78767A</color>
+    <color name="colorOutlineVariant">#FFC6C4D1</color>
+    <color name="colorInverseSurface">#FF303033</color>
+    <color name="colorInverseOnSurface">#FFF3F0F4</color>
+    <color name="colorInversePrimary">#FFBAC3FF</color>
+    <color name="colorScrim">#FF000000</color>
+    <color name="colorPrimaryVariant">#FF354187</color>
+    <color name="colorWarning">#FFFFC107</color>
+    <color name="colorDivider">#FFB0B0B0</color>
+    <color name="colorBackground80">#80F9F5F9</color>
+    <color name="colorBackground35">#99F9F5F9</color>
+<color name="colorOnBackground35">#991B1B1E</color>
+    <color name="colorWsConnected">#FF2E7D32</color>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_save"
+        android:icon="@drawable/material_symbols_save_outline_rounded"
+        android:title="保存"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@drawable/material_symbols_edit_outline_rounded"
+        android:title="编辑"
+        android:contentDescription="编辑"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_export"
+        android:title="导出"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_compile"
+        android:title="编译打包"
+        android:contentDescription="编译打包"
+        app:showAsAction="never" />
+</menu>
