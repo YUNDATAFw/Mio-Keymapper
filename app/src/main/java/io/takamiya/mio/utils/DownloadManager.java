@@ -143,6 +143,8 @@ public class DownloadManager {
                         .to(task.getFilePath())
                         .resume(true)
                         .overwrite(false)
+                        .multiThread(4)          // v3.2 默认单连接，显式恢复多连接下载
+                        .cancelAsFailure()       // v3.2 取消默认只走 onCancel，保持旧语义（onFailure(0,"Canceled")）
                         .progress(new ProgressListener() {
                             private long lastNotifyMs;
 
