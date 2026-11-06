@@ -127,7 +127,7 @@ Mio/
 - 未在所有真机 / 系统版本上完整验证，尤其是 Kore 插件安装、WS 连接、实体键触发与注入通道。
 - 部分在线功能依赖服务端接口，离线环境下不可用。
 - `app/libs/` 中的 AAR / JAR 为本地二进制依赖，仓库不保证其来源与许可证；公开分发前请自行确认授权。
-- `app/release/` 中保留了历史构建产物，仓库体积较大；如不需要可自行删除并加入 `.gitignore`。
+- `app/release/` 与 IDE 配置 `.idea/` 已加入 `.gitignore`，不再随仓库分发。
 
 ## 安全与隐私
 
@@ -137,8 +137,19 @@ Mio/
 
 ## 许可证
 
-本项目自身代码的许可证待定（可选用 MIT / Apache-2.0 / GPL-3.0）。  
-第三方依赖与本地 AAR 遵循其各自许可证，详见对应项目。
+本项目采用 [Apache License 2.0](LICENSE) 开源。
+
+```
+Copyright 2026 YUNDATAFw
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+```
+
+第三方依赖与 `app/libs/` 中的本地 AAR / JAR 遵循其各自许可证，详见对应项目；本项目不改变、也不代表其授权。
 
 ## 致谢
 
