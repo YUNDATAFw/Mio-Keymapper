@@ -7,8 +7,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import cn.fsy.plugin.sdl.library.BridgeHandler;
-import cn.fsy.plugin.sdl.library.SdlException;
+import cn.fsy.plugin.kore.library.BridgeHandler;
+import cn.fsy.plugin.kore.library.KoreException;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.pluginconfig.PluginConfigScheme;
 
@@ -122,7 +122,7 @@ public class MioConfigBridge {
             String inputType = optStr(args, 5);
             if (inputType == null) inputType = "";
             if (!isInputType(inputType)) {
-                throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+                throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                         "onText: 未知 inputType " + inputType
                                 + "（可选 int/decimal/digits/english）");
             }
@@ -151,7 +151,7 @@ public class MioConfigBridge {
             String title = str(args, 1, "onRadio");
             List<String> labels = strings(args, 3, "onRadio");
             if (labels.isEmpty()) {
-                throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+                throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                         "onRadio: 选项列表不能为空");
             }
             PluginConfigScheme.SectionBuilder s = open(d, "onRadio", key, title);
@@ -172,7 +172,7 @@ public class MioConfigBridge {
             String title = str(args, 1, "onChip");
             List<String> labels = strings(args, 3, "onChip");
             if (labels.isEmpty()) {
-                throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+                throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                         "onChip: 选项列表不能为空");
             }
             PluginConfigScheme.SectionBuilder s = open(d, "onChip", key, title);
@@ -234,7 +234,7 @@ public class MioConfigBridge {
     private Declaration require(String fn) {
         Declaration d = current.get();
         if (d == null) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 必须在插件 config 模块的 schema() 中调用");
         }
         return d;
@@ -245,11 +245,11 @@ public class MioConfigBridge {
     private PluginConfigScheme.SectionBuilder open(Declaration d, String fn,
                                                    String key, String title) {
         if (key.isEmpty()) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": key 不能为空");
         }
         if (title.isEmpty()) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": title 不能为空");
         }
         if (!d.keys.add(key)) {
@@ -264,12 +264,12 @@ public class MioConfigBridge {
 
     private static String str(Object[] args, int index, String fn) {
         if (args == null || index >= args.length || args[index] == null) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 缺少第 " + (index + 1) + " 个参数");
         }
         String s = args[index].toString();
         if (s.isEmpty()) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 第 " + (index + 1) + " 个参数不能为空");
         }
         return s;
@@ -300,7 +300,7 @@ public class MioConfigBridge {
         try {
             return Integer.parseInt(o.toString().trim());
         } catch (NumberFormatException e) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     "第 " + (index + 1) + " 个参数必须为整数");
         }
     }

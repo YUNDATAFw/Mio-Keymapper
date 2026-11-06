@@ -2,8 +2,8 @@ package io.takamiya.mio.dsl.bridge;
 
 import java.util.List;
 
-import cn.fsy.plugin.sdl.library.BridgeHandler;
-import cn.fsy.plugin.sdl.library.SdlException;
+import cn.fsy.plugin.kore.library.BridgeHandler;
+import cn.fsy.plugin.kore.library.KoreException;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.dsl.MioBridgeRegistry;
 import io.takamiya.mio.dsl.WsFeatureRegistry;
@@ -181,7 +181,7 @@ public class WsBridge {
             String packageName = eng != null ? eng.getCurrentShortcutPackage() : null;
             String serviceName = eng != null ? eng.getCurrentShortcutOwner() : null;
             if (serviceName == null) {
-                throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+                throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                         "registerFeature 必须在 WS_SERVICE 服务的 serverInit 中调用");
             }
             WsFeatureRegistry.register(key, packageName, serviceName, name, desc);
@@ -195,7 +195,7 @@ public class WsBridge {
 
     private static String str(Object[] args, int index, String fn) {
         if (args == null || index >= args.length || args[index] == null) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 缺少第 " + (index + 1) + " 个参数");
         }
         return args[index].toString();
@@ -209,7 +209,7 @@ public class WsBridge {
 
     private static int num(Object[] args, int index, String fn) {
         if (args == null || index >= args.length || args[index] == null) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 缺少第 " + (index + 1) + " 个参数");
         }
         Object o = args[index];
@@ -217,14 +217,14 @@ public class WsBridge {
         try {
             return Integer.parseInt(o.toString());
         } catch (NumberFormatException e) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 第 " + (index + 1) + " 个参数必须为整数");
         }
     }
 
     private static float fnum(Object[] args, int index, String fn) {
         if (args == null || index >= args.length || args[index] == null) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 缺少第 " + (index + 1) + " 个参数");
         }
         Object o = args[index];
@@ -232,7 +232,7 @@ public class WsBridge {
         try {
             return Float.parseFloat(o.toString());
         } catch (NumberFormatException e) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 第 " + (index + 1) + " 个参数必须为数字");
         }
     }

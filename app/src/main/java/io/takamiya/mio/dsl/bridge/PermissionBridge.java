@@ -15,12 +15,12 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import cn.fsy.plugin.sdl.library.BridgeHandler;
-import cn.fsy.plugin.sdl.library.SdlEngine;
-import cn.fsy.plugin.sdl.library.internal.running.AstInterpreter;
-import cn.fsy.plugin.sdl.library.internal.running.Closure;
-import cn.fsy.plugin.sdl.library.internal.running.PermissionGuard;
-import cn.fsy.plugin.sdl.library.plugin.Permissions;
+import cn.fsy.plugin.kore.library.BridgeHandler;
+import cn.fsy.plugin.kore.library.KoreEngine;
+import cn.fsy.plugin.kore.library.internal.running.AstInterpreter;
+import cn.fsy.plugin.kore.library.internal.running.Closure;
+import cn.fsy.plugin.kore.library.internal.running.PermissionGuard;
+import cn.fsy.plugin.kore.library.plugin.Permissions;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.PluginAuthSheet;
 
@@ -298,7 +298,7 @@ public class PermissionBridge {
 
     private String displayName(String pkg) {
         try {
-            cn.fsy.plugin.sdl.library.plugin.PluginItem item = SdlEngine.pluginInfo(pkg);
+            cn.fsy.plugin.kore.library.plugin.PluginItem item = KoreEngine.pluginInfo(pkg);
             if (item != null && item.getPluginName() != null && !item.getPluginName().isEmpty()) {
                 return item.getPluginName();
             }

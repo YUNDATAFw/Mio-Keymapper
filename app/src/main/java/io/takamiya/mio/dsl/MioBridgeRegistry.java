@@ -2,8 +2,8 @@ package io.takamiya.mio.dsl;
 
 import android.content.Context;
 
-import cn.fsy.plugin.sdl.library.BridgeHandler;
-import cn.fsy.plugin.sdl.library.SdlEngine;
+import cn.fsy.plugin.kore.library.BridgeHandler;
+import cn.fsy.plugin.kore.library.KoreEngine;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.dsl.bridge.FloatingBridge;
 import io.takamiya.mio.dsl.bridge.GamepadBridge;
@@ -15,7 +15,7 @@ import io.takamiya.mio.dsl.bridge.WsBridge;
 
 /**
  * Mio 专属桥接注册中心。
- * 在 SdlEngine.init() 之后调用 register()，将所有 Mio 桥接函数注册到 SDL 引擎。
+ * 在 KoreEngine.init() 之后调用 register()，将所有 Mio 桥接函数注册到 Kore 引擎。
  */
 public class MioBridgeRegistry {
 
@@ -33,8 +33,8 @@ public class MioBridgeRegistry {
     private MioBridgeRegistry() {}
 
     /**
-     * 注册所有 Mio 桥接到 SdlEngine。
-     * 必须在 SdlEngine.init(context) 之后调用。
+     * 注册所有 Mio 桥接到 KoreEngine。
+     * 必须在 KoreEngine.init(context) 之后调用。
      */
     public static void register(Context context) {
         AppLogger.i(TAG, "register: registering Mio bridges");
@@ -74,7 +74,7 @@ public class MioBridgeRegistry {
         if (hostDataWrapped) return;
         BridgeHandler original;
         try {
-            original = SdlEngine.findBridge("HostData.get");
+            original = KoreEngine.findBridge("HostData.get");
         } catch (Exception e) {
             original = null;
         }
@@ -239,7 +239,7 @@ public class MioBridgeRegistry {
 
     private static void bridge(String hostId, BridgeHandler handler) {
         try {
-            SdlEngine.bridge(hostId, handler);
+            KoreEngine.bridge(hostId, handler);
         } catch (Exception e) {
             AppLogger.e(TAG, "register bridge failed: " + hostId + " - " + e.getMessage());
         }

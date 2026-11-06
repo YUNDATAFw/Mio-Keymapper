@@ -1,29 +1,45 @@
+# Gradle / build
 *.iml
 .gradle
+build/
+app/build/
+/captures
+.externalNativeBuild
+.cxx
+
+# Local config / secrets
 /local.properties
+local.properties
+/key/
+keystore.properties
+
+# IDE
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+
+# OS
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
 
-# 签名密钥（不入库）
-/key/
-
-# 构建日志/临时产物
+# Logs / temp
 *.log
 hs_err_pid*.log
 replay_pid*.log
 build-log.txt
 build_out*.txt
+build_out*.log
 deps_out.log
 link_out.txt
-build_out*.log
 *.zip
+
+# Local binaries / backups
+*.old
+*.bak
+app/libs/*.old
+app/libs/*.bak
+
+# Build artifacts
+app/release/

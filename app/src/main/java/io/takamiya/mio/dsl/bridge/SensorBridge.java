@@ -7,7 +7,7 @@ import android.hardware.SensorManager;
 import java.util.HashMap;
 import java.util.Map;
 
-import cn.fsy.plugin.sdl.library.BridgeHandler;
+import cn.fsy.plugin.kore.library.BridgeHandler;
 import io.takamiya.mio.gamepad.GyroController;
 
 /**

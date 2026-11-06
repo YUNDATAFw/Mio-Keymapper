@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 
-import cn.fsy.plugin.sdl.library.BridgeHandler;
+import cn.fsy.plugin.kore.library.BridgeHandler;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.floating.FloatingCrosshair;
 import io.takamiya.mio.floating.FloatingStatusBar;

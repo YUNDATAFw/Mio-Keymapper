@@ -1,14 +1,14 @@
 package io.takamiya.mio.dsl;
 
-import cn.fsy.plugin.sdl.library.SdlException;
-import cn.fsy.plugin.sdl.library.manage.install.InstallException;
+import cn.fsy.plugin.kore.library.KoreException;
+import cn.fsy.plugin.kore.library.manage.install.InstallException;
 
 public final class InstallErrors {
 
     private InstallErrors() {
     }
 
-    public static String describe(SdlException e) {
+    public static String describe(KoreException e) {
         if (e == null) {
             return "未知错误";
         }

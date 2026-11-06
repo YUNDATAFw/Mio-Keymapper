@@ -114,7 +114,7 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    /** 侧边栏头部：加载随机动漫图作背景，并按图提取 MD3 色板给头部组件调色。 */
+    /** 侧边栏头部：使用本地资源作为背景，并按图提取 MD3 色板给头部组件调色。 */
     private void setupDrawerHeader() {
         View header = binding.navigationView.getHeaderView(0);
         ImageView bg = header.findViewById(R.id.headerBg);
@@ -126,11 +126,10 @@ public class HomeActivity extends AppCompatActivity {
         TextView badge = header.findViewById(R.id.headerBadge);
         TextView subtitle = header.findViewById(R.id.headerSubtitle);
 
-        // 带随机后缀穿透缓存，保证每次进主页换图；禁用磁盘缓存防止 URL 唯一导致缓存膨胀
-        String url = HEADER_IMAGE_URL + "&r=" + System.nanoTime();
+        // 离线模式：使用本地资源作为背景，避免网络请求卡顿
         Glide.with(this).asBitmap()
-                .load(url)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .load(R.drawable.header_bg_fallback) // 本地备用图
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .listener(new RequestListener<Bitmap>() {
                     @Override
                     public boolean onResourceReady(Bitmap resource, Object model, Target<Bitmap> target,
@@ -142,7 +141,8 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public boolean onLoadFailed(GlideException e, Object model, Target<Bitmap> target,
                                                 boolean isFirstResource) {
-                        // 保持 XML 原色与透明遮罩，静默回退
+                        // 使用默认色板回退
+                        applyHeaderPalette(null, scrim, avatarCard, avatar, title, badgeCard, badge, subtitle);
                         return false;
                     }
                 })

@@ -1,0 +1,264 @@
+{
+  "source": "minecraft.wiki + zh.minecraft.wiki",
+  "edition": "Java Edition",
+  "total": 43,
+  "enchantments": [
+    {
+      "id": "aqua_affinity",
+      "name": "Aqua Affinity",
+      "max_level": 1,
+      "name_cn": "水下速掘"
+    },
+    {
+      "id": "bane_of_arthropods",
+      "name": "Bane of Arthropods",
+      "max_level": 5,
+      "name_cn": "节肢杀手"
+    },
+    {
+      "id": "binding_curse",
+      "name": "Curse of Binding",
+      "max_level": 1,
+      "name_cn": "绑定诅咒"
+    },
+    {
+      "id": "blast_protection",
+      "name": "Blast Protection",
+      "max_level": 4,
+      "name_cn": "爆炸保护"
+    },
+    {
+      "id": "breach",
+      "name": "Breach",
+      "max_level": 4,
+      "name_cn": "破甲"
+    },
+    {
+      "id": "channeling",
+      "name": "Channeling",
+      "max_level": 1,
+      "name_cn": "引雷"
+    },
+    {
+      "id": "cleaving",
+      "name": "Cleaving",
+      "max_level": 3
+    },
+    {
+      "id": "density",
+      "name": "Density",
+      "max_level": 5,
+      "name_cn": "致密"
+    },
+    {
+      "id": "depth_strider",
+      "name": "Depth Strider",
+      "max_level": 3,
+      "name_cn": "深海探索者"
+    },
+    {
+      "id": "efficiency",
+      "name": "Efficiency",
+      "max_level": 5,
+      "name_cn": "效率"
+    },
+    {
+      "id": "feather_falling",
+      "name": "Feather Falling",
+      "max_level": 4,
+      "name_cn": "摔落缓冲"
+    },
+    {
+      "id": "fire_aspect",
+      "name": "Fire Aspect",
+      "max_level": 2,
+      "name_cn": "火焰附加"
+    },
+    {
+      "id": "fire_protection",
+      "name": "Fire Protection",
+      "max_level": 4,
+      "name_cn": "火焰保护"
+    },
+    {
+      "id": "flame",
+      "name": "Flame",
+      "max_level": 1,
+      "name_cn": "火矢"
+    },
+    {
+      "id": "fortune",
+      "name": "Fortune",
+      "max_level": 3,
+      "name_cn": "时运"
+    },
+    {
+      "id": "frost_walker",
+      "name": "Frost Walker",
+      "max_level": 2,
+      "name_cn": "冰霜行者"
+    },
+    {
+      "id": "impaling",
+      "name": "Impaling",
+      "max_level": 5,
+      "name_cn": "穿刺"
+    },
+    {
+      "id": "infinity",
+      "name": "Infinity",
+      "max_level": 1,
+      "name_cn": "无限"
+    },
+    {
+      "id": "knockback",
+      "name": "Knockback",
+      "max_level": 2,
+      "name_cn": "击退"
+    },
+    {
+      "id": "looting",
+      "name": "Looting",
+      "max_level": 3,
+      "name_cn": "抢夺"
+    },
+    {
+      "id": "loyalty",
+      "name": "Loyalty",
+      "max_level": 3,
+      "name_cn": "忠诚"
+    },
+    {
+      "id": "luck_of_the_sea",
+      "name": "Luck of the Sea",
+      "max_level": 3,
+      "name_cn": "海之眷顾"
+    },
+    {
+      "id": "lure",
+      "name": "Lure",
+      "max_level": 3,
+      "name_cn": "饵钓"
+    },
+    {
+      "id": "mending",
+      "name": "Mending",
+      "max_level": 1,
+      "name_cn": "经验修补"
+    },
+    {
+      "id": "multishot",
+      "name": "Multishot",
+      "max_level": 1,
+      "name_cn": "多重射击"
+    },
+    {
+      "id": "piercing",
+      "name": "Piercing",
+      "max_level": 4,
+      "name_cn": "穿透"
+    },
+    {
+      "id": "power",
+      "name": "Power",
+      "max_level": 5,
+      "name_cn": "強力"
+    },
+    {
+      "id": "projectile_protection",
+      "name": "Projectile Protection",
+      "max_level": 4,
+      "name_cn": "弹射物保护"
+    },
+    {
+      "id": "protection",
+      "name": "Protection",
+      "max_level": 4,
+      "name_cn": "保护"
+    },
+    {
+      "id": "punch",
+      "name": "Punch",
+      "max_level": 2,
+      "name_cn": "冲击"
+    },
+    {
+      "id": "quick_charge",
+      "name": "Quick Charge",
+      "max_level": 3,
+      "name_cn": "快速装填"
+    },
+    {
+      "id": "respiration",
+      "name": "Respiration",
+      "max_level": 3,
+      "name_cn": "水中呼吸"
+    },
+    {
+      "id": "riptide",
+      "name": "Riptide",
+      "max_level": 3,
+      "name_cn": "激流"
+    },
+    {
+      "id": "sharpness",
+      "name": "Sharpness",
+      "max_level": 5,
+      "name_cn": "锋利"
+    },
+    {
+      "id": "silk_touch",
+      "name": "Silk Touch",
+      "max_level": 1,
+      "name_cn": "精准采集"
+    },
+    {
+      "id": "smite",
+      "name": "Smite",
+      "max_level": 5,
+      "name_cn": "亡灵杀手"
+    },
+    {
+      "id": "soul_speed",
+      "name": "Soul Speed",
+      "max_level": 3,
+      "name_cn": "灵魂疾行"
+    },
+    {
+      "id": "sweeping_edge",
+      "name": "Sweeping Edge",
+      "max_level": 3,
+      "name_cn": "横扫之刃"
+    },
+    {
+      "id": "swift_sneak",
+      "name": "Swift Sneak",
+      "max_level": 3,
+      "name_cn": "迅捷潜行"
+    },
+    {
+      "id": "thorns",
+      "name": "Thorns",
+      "max_level": 3,
+      "name_cn": "荆棘"
+    },
+    {
+      "id": "unbreaking",
+      "name": "Unbreaking",
+      "max_level": 3,
+      "name_cn": "耐久"
+    },
+    {
+      "id": "vanishing_curse",
+      "name": "Curse of Vanishing",
+      "max_level": 1,
+      "name_cn": "消失诅咒"
+    },
+    {
+      "id": "wind_burst",
+      "name": "Wind Burst",
+      "max_level": 3,
+      "name_cn": "风爆"
+    }
+  ]
+}

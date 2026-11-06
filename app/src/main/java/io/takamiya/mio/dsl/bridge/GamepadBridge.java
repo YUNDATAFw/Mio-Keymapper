@@ -2,7 +2,7 @@ package io.takamiya.mio.dsl.bridge;
 
 import android.content.Context;
 
-import cn.fsy.plugin.sdl.library.BridgeHandler;
+import cn.fsy.plugin.kore.library.BridgeHandler;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.gamepad.GamepadButton;
 import io.takamiya.mio.gamepad.GamepadEngine;

@@ -21,15 +21,15 @@ import io.takamiya.mio.utils.DataManage;
 import io.takamiya.mio.utils.RegistryUtils;
 
 /**
- * DSL 插件管理器（替代旧的 IPluginManager + IPluginInstaller）。
- * 扫描 SdlEngine 安装的 ZIP 插件目录（plugin/private/），提供列表/读取/卸载/启用禁用功能。
+ * Kore 插件管理器（替代旧的 IPluginManager + IPluginInstaller）。
+ * 扫描 Kore 安装的插件目录（kore-plugins/），提供列表/读取/卸载/启用禁用功能。
  */
 public class IPluginManager {
 
     private static final String TAG = "PluginManager";
 
-    /** SdlEngine 安装目录 */
-    private static final String PLUGIN_PRIVATE_DIR = "plugin/private";
+    /** Kore 插件安装目录 */
+    private static final String PLUGIN_PRIVATE_DIR = "kore-plugins";
 
     private final Context context;
     private final File pluginDir;
@@ -47,7 +47,7 @@ public class IPluginManager {
 
     public Plugin get(String packageName) {
         File pkgDir = new File(pluginDir, packageName);
-        File configFile = new File(pkgDir, "config.json");
+        File configFile = new File(pkgDir, "plugin.json");
         if (!configFile.isFile()) {
             AppLogger.w(TAG, "get: plugin not found: " + packageName);
             return null;
@@ -62,7 +62,7 @@ public class IPluginManager {
 
     public String getPluginJson(String packageName) {
         File pkgDir = new File(pluginDir, packageName);
-        File configFile = new File(pkgDir, "config.json");
+        File configFile = new File(pkgDir, "plugin.json");
         if (!configFile.isFile()) return null;
         try {
             return decompressConfig(configFile);
@@ -74,7 +74,7 @@ public class IPluginManager {
 
     public byte[] getPluginRawFile(String packageName) {
         File pkgDir = new File(pluginDir, packageName);
-        File configFile = new File(pkgDir, "config.json");
+        File configFile = new File(pkgDir, "plugin.json");
         if (!configFile.isFile()) return null;
         try (FileInputStream fis = new FileInputStream(configFile)) {
             byte[] data = new byte[(int) configFile.length()];
@@ -116,7 +116,7 @@ public class IPluginManager {
 
     public boolean isInstalled(String packageName) {
         File pkgDir = new File(pluginDir, packageName);
-        return new File(pkgDir, "config.json").isFile();
+        return new File(pkgDir, "plugin.json").isFile();
     }
 
     public List<String> getInstalledPackages() {
@@ -180,7 +180,7 @@ public class IPluginManager {
     // ==================== 内部方法 ====================
 
     private Plugin readPluginFromDir(File pkgDir, String packageName) {
-        File configFile = new File(pkgDir, "config.json");
+        File configFile = new File(pkgDir, "plugin.json");
         if (!configFile.isFile()) return null;
 
         try {
@@ -217,7 +217,7 @@ public class IPluginManager {
     }
 
     /**
-     * 解压 config.json（SdlEngine 安装的 ZIP 中 config.json 使用 zlib 压缩）
+     * 解压 config.json（Kore 插件的 plugin.json 可能使用 zlib 压缩）
      */
     private String decompressConfig(File configFile) throws Exception {
         byte[] raw = readFileBytes(configFile);

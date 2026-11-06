@@ -31,7 +31,7 @@ import androidx.lifecycle.LifecycleRegistry;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 
-import cn.fsy.plugin.sdl.library.SdlEngine;
+import cn.fsy.plugin.kore.library.KoreEngine;
 import cn.panda.utils.library.AppLogger;
 import cn.panda.utils.library.Registry.Registry;
 import cn.panda.utils.library.Registry.exceptions.RegistryException;
@@ -1331,7 +1331,7 @@ public class FloatingWindowService extends Service implements FloatingSettingsPa
         }
         dslEventDispatcher = null;
         try {
-            SdlEngine.flushAllHostData();
+            KoreEngine.flushAllHostData();
         } catch (Exception e) {
             AppLogger.e(TAG, "flushAllHostData failed: " + e.getMessage(), e);
         }
@@ -1362,7 +1362,7 @@ public class FloatingWindowService extends Service implements FloatingSettingsPa
         java.util.List<String> packages = dslPluginManager.getInstalledPackages();
         for (String pkg : packages) {
             try {
-                if (!SdlEngine.isEnabled(pkg)) {
+                if (!KoreEngine.isEnabled(pkg)) {
                     AppLogger.i(TAG, "loading DSL plugin skipped (disabled): " + pkg);
                     continue;
                 }
@@ -1404,7 +1404,7 @@ public class FloatingWindowService extends Service implements FloatingSettingsPa
         if (dslPluginManager == null || packageName == null) return;
         dslPluginManager.close(packageName);
         try {
-            if (SdlEngine.isEnabled(packageName)) {
+            if (KoreEngine.isEnabled(packageName)) {
                 loadDslPlugin(packageName);
             }
         } catch (Exception e) {

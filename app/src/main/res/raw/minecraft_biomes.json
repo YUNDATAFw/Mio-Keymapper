@@ -1,0 +1,332 @@
+{
+  "source": "minecraft.wiki + zh.minecraft.wiki",
+  "edition": "Java Edition",
+  "total": 65,
+  "biomes": [
+    {
+      "id": "badlands",
+      "name": "Badlands",
+      "name_cn": "恶地"
+    },
+    {
+      "id": "bamboo_jungle",
+      "name": "Bamboo Jungle",
+      "name_cn": "竹林"
+    },
+    {
+      "id": "basalt_deltas",
+      "name": "Basalt Deltas",
+      "name_cn": "玄武岩三角洲"
+    },
+    {
+      "id": "beach",
+      "name": "Beach",
+      "name_cn": "沙滩"
+    },
+    {
+      "id": "birch_forest",
+      "name": "Birch Forest",
+      "name_cn": "桦木森林"
+    },
+    {
+      "id": "cherry_grove",
+      "name": "Cherry Grove",
+      "name_cn": "樱花树林"
+    },
+    {
+      "id": "cold_ocean",
+      "name": "Cold Ocean",
+      "name_cn": "冷水海洋"
+    },
+    {
+      "id": "crimson_forest",
+      "name": "Crimson Forest",
+      "name_cn": "绯红森林"
+    },
+    {
+      "id": "dark_forest",
+      "name": "Dark Forest",
+      "name_cn": "黑森林"
+    },
+    {
+      "id": "deep_cold_ocean",
+      "name": "Deep Cold Ocean",
+      "name_cn": "冷水深海"
+    },
+    {
+      "id": "deep_dark",
+      "name": "Deep Dark",
+      "name_cn": "深暗之域"
+    },
+    {
+      "id": "deep_frozen_ocean",
+      "name": "Deep Frozen Ocean",
+      "name_cn": "冰冻深海"
+    },
+    {
+      "id": "deep_lukewarm_ocean",
+      "name": "Deep Lukewarm Ocean",
+      "name_cn": "温水深海"
+    },
+    {
+      "id": "deep_ocean",
+      "name": "Deep Ocean",
+      "name_cn": "深海"
+    },
+    {
+      "id": "desert",
+      "name": "Desert",
+      "name_cn": "沙漠"
+    },
+    {
+      "id": "dripstone_caves",
+      "name": "Dripstone Caves",
+      "name_cn": "溶洞"
+    },
+    {
+      "id": "end_barrens",
+      "name": "End Barrens",
+      "name_cn": "末地荒地"
+    },
+    {
+      "id": "end_highlands",
+      "name": "End Highlands",
+      "name_cn": "末地高地"
+    },
+    {
+      "id": "end_midlands",
+      "name": "End Midlands",
+      "name_cn": "末地内陆"
+    },
+    {
+      "id": "eroded_badlands",
+      "name": "Eroded Badlands",
+      "name_cn": "风蚀恶地"
+    },
+    {
+      "id": "flower_forest",
+      "name": "Flower Forest",
+      "name_cn": "繁花森林"
+    },
+    {
+      "id": "forest",
+      "name": "Forest",
+      "name_cn": "森林"
+    },
+    {
+      "id": "frozen_ocean",
+      "name": "Frozen Ocean",
+      "name_cn": "冻洋"
+    },
+    {
+      "id": "frozen_peaks",
+      "name": "Frozen Peaks",
+      "name_cn": "冰封山峰"
+    },
+    {
+      "id": "frozen_river",
+      "name": "Frozen River",
+      "name_cn": "冻河"
+    },
+    {
+      "id": "grove",
+      "name": "Grove",
+      "name_cn": "雪林"
+    },
+    {
+      "id": "ice_spikes",
+      "name": "Ice Spikes",
+      "name_cn": "冰刺之地"
+    },
+    {
+      "id": "jagged_peaks",
+      "name": "Jagged Peaks",
+      "name_cn": "尖峭山峰"
+    },
+    {
+      "id": "jungle",
+      "name": "Jungle",
+      "name_cn": "丛林"
+    },
+    {
+      "id": "lukewarm_ocean",
+      "name": "Lukewarm Ocean",
+      "name_cn": "温水海洋"
+    },
+    {
+      "id": "lush_caves",
+      "name": "Lush Caves",
+      "name_cn": "繁茂洞穴"
+    },
+    {
+      "id": "mangrove_swamp",
+      "name": "Mangrove Swamp",
+      "name_cn": "红树林沼泽"
+    },
+    {
+      "id": "meadow",
+      "name": "Meadow",
+      "name_cn": "草甸"
+    },
+    {
+      "id": "mushroom_fields",
+      "name": "Mushroom Fields",
+      "name_cn": "蘑菇岛"
+    },
+    {
+      "id": "nether_wastes",
+      "name": "Nether Wastes",
+      "name_cn": "下界荒地"
+    },
+    {
+      "id": "ocean",
+      "name": "Ocean",
+      "name_cn": "海洋"
+    },
+    {
+      "id": "old_growth_birch_forest",
+      "name": "Old Growth Birch Forest",
+      "name_cn": "原始桦木森林"
+    },
+    {
+      "id": "old_growth_pine_taiga",
+      "name": "Old Growth Pine Taiga",
+      "name_cn": "原始松木针叶林"
+    },
+    {
+      "id": "old_growth_spruce_taiga",
+      "name": "Old Growth Spruce Taiga",
+      "name_cn": "原始云杉针叶林"
+    },
+    {
+      "id": "pale_garden",
+      "name": "Pale Garden",
+      "name_cn": "苍白之园"
+    },
+    {
+      "id": "plains",
+      "name": "Plains",
+      "name_cn": "平原"
+    },
+    {
+      "id": "river",
+      "name": "River",
+      "name_cn": "河流"
+    },
+    {
+      "id": "savanna",
+      "name": "Savanna",
+      "name_cn": "热带草原"
+    },
+    {
+      "id": "savanna_plateau",
+      "name": "Savanna Plateau",
+      "name_cn": "热带高原"
+    },
+    {
+      "id": "small_end_islands",
+      "name": "Small End Islands",
+      "name_cn": "末地小型岛屿"
+    },
+    {
+      "id": "snowy_beach",
+      "name": "Snowy Beach",
+      "name_cn": "积雪沙滩"
+    },
+    {
+      "id": "snowy_plains",
+      "name": "Snowy Plains",
+      "name_cn": "雪原"
+    },
+    {
+      "id": "snowy_slopes",
+      "name": "Snowy Slopes",
+      "name_cn": "积雪山坡"
+    },
+    {
+      "id": "snowy_taiga",
+      "name": "Snowy Taiga",
+      "name_cn": "积雪针叶林"
+    },
+    {
+      "id": "soul_sand_valley",
+      "name": "Soul Sand Valley",
+      "name_cn": "灵魂沙峡谷"
+    },
+    {
+      "id": "sparse_jungle",
+      "name": "Sparse Jungle",
+      "name_cn": "稀疏丛林"
+    },
+    {
+      "id": "stony_peaks",
+      "name": "Stony Peaks",
+      "name_cn": "裸岩山峰"
+    },
+    {
+      "id": "stony_shore",
+      "name": "Stony Shore",
+      "name_cn": "石岸"
+    },
+    {
+      "id": "sunflower_plains",
+      "name": "Sunflower Plains",
+      "name_cn": "向日葵平原"
+    },
+    {
+      "id": "swamp",
+      "name": "Swamp",
+      "name_cn": "沼泽"
+    },
+    {
+      "id": "taiga",
+      "name": "Taiga",
+      "name_cn": "针叶林"
+    },
+    {
+      "id": "the_end",
+      "name": "The End",
+      "name_cn": "末地（生物群系）"
+    },
+    {
+      "id": "the_void",
+      "name": "The Void",
+      "name_cn": "虚空（生物群系）"
+    },
+    {
+      "id": "warm_ocean",
+      "name": "Warm Ocean",
+      "name_cn": "暖水海洋"
+    },
+    {
+      "id": "warped_forest",
+      "name": "Warped Forest",
+      "name_cn": "诡异森林"
+    },
+    {
+      "id": "windswept_forest",
+      "name": "Windswept Forest",
+      "name_cn": "风袭森林"
+    },
+    {
+      "id": "windswept_gravelly_hills",
+      "name": "Windswept Gravelly Hills",
+      "name_cn": "风袭沙砾丘陵"
+    },
+    {
+      "id": "windswept_hills",
+      "name": "Windswept Hills",
+      "name_cn": "风袭丘陵"
+    },
+    {
+      "id": "windswept_savanna",
+      "name": "Windswept Savanna",
+      "name_cn": "风袭热带草原"
+    },
+    {
+      "id": "wooded_badlands",
+      "name": "Wooded Badlands",
+      "name_cn": "疏林恶地"
+    }
+  ]
+}

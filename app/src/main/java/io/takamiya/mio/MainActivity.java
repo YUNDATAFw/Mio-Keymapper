@@ -52,6 +52,8 @@ import io.noties.markwon.Markwon;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+    // 本地调试：跳过服务器校验 / 版本检查，直接进入用户流程
+    private static final boolean SKIP_STARTUP_NETWORK_CHECK = true;
     private ActivityMainBinding binding;
     private HttpClientJava client = HttpManage.getInstance();
 
@@ -61,13 +63,9 @@ public class MainActivity extends AppCompatActivity {
                     Registry reg = RegistryUtils.get();
                     reg.set(DataManage.Tag.APP_CONFIG_USER_AGREEMENT_ACCEPTED.getValue(), true);
                     reg.saveAsync();
-                    if (UserToken.isLoggedIn()) {
-                        Intent intent = new Intent(this, HomeActivity.class);
-                        startActivity(intent);
-                    } else {
-                        Intent intent = new Intent(this, LoginActivity.class);
-                        startActivity(intent);
-                    }
+                    // 离线模式：不区分登录状态，直接进入主页
+                    Intent intent = new Intent(this, HomeActivity.class);
+                    startActivity(intent);
                 }
                 finish();
             });
@@ -93,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void startLoading() {
         binding.loadingView.setVisibility(View.VISIBLE);
+        if (SKIP_STARTUP_NETWORK_CHECK) {
+            AppLogger.w(TAG, "startup network check skipped, go to user flow directly");
+            onUser();
+            return;
+        }
         verifyServerStatus();
     }
 
@@ -118,15 +121,10 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if (UserToken.isLoggedIn()) {
-            Intent intent = new Intent(this, HomeActivity.class);
-            startActivity(intent);
-            finish();
-        } else {
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
-            finish();
-        }
+        // 离线模式：跳过登录/注册/会员等在线入口，直接进入主页
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void onUpdate() {
@@ -173,6 +171,12 @@ public class MainActivity extends AppCompatActivity {
     private static final int MAX_VERIFY_RETRIES = 2;
 
     private void verifyServerStatus() {
+        // 离线模式：跳过服务器校验，直接进行用户检查
+        if (!NetworkUtils.isNetworkAvailable(this)) {
+            AppLogger.w(TAG, "offline mode: skipping server verification");
+            runOnUiThread(this::onCheck);
+            return;
+        }
         verifyServerWithRetry(0);
     }
 

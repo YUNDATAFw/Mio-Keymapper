@@ -2,7 +2,6 @@ package io.takamiya.mio;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,6 +40,13 @@ public class UserAgreementActivity extends AppCompatActivity {
 
         Markwon markwon = MarkdownProvider.create(this);
 
+        // 离线兜底：先把本地协议文本展示出来并允许同意，
+        // 网络成功后再用服务端内容覆盖，避免断网时按钮一直不可点。
+        binding.progressBar.setVisibility(View.GONE);
+        binding.scrollView.setVisibility(View.VISIBLE);
+        markwon.setMarkdown(binding.markdownContent, OFFLINE_AGREEMENT_TEXT);
+        binding.btnAgree.setEnabled(true);
+
         httpClientJava.get(UrlBuilder.getInstance().longPath(SecureStrings.path(16)).build())
                 .onSuccess((code, body) -> {
                     String markdown = body.trim();
@@ -53,15 +59,13 @@ public class UserAgreementActivity extends AppCompatActivity {
                 })
                 .onFailure((code, error) -> {
                     runOnUiThread(() -> {
+                        // 保留本地兜底文本，按钮保持可点击
                         binding.progressBar.setVisibility(android.view.View.GONE);
                         binding.scrollView.setVisibility(android.view.View.VISIBLE);
-                        Toast.makeText(this, "加载失败: " + error, Toast.LENGTH_SHORT).show();
-                        binding.markdownContent.setText("加载用户协议失败，请检查网络后重试。");
+                        binding.btnAgree.setEnabled(true);
                     });
                 }).execute();
 
-        binding.scrollView.setVisibility(android.view.View.GONE);
-        binding.btnAgree.setEnabled(false);
         binding.btnAgree.setOnClickListener(v -> {
             setResult(RESULT_OK);
             finish();
@@ -69,6 +73,15 @@ public class UserAgreementActivity extends AppCompatActivity {
 
         binding.btnDisagree.setOnClickListener(v -> finish());
     }
+
+    private static final String OFFLINE_AGREEMENT_TEXT =
+            "# 用户协议\n\n"
+                    + "欢迎使用 Mio。\n\n"
+                    + "1. 本应用为本地调试版本，部分在线服务可能不可用。\n"
+                    + "2. 使用本应用产生的数据仅保存在本机，卸载应用后将被清除。\n"
+                    + "3. 请勿将本应用用于任何违法违规用途。\n"
+                    + "4. 继续使用即表示你已阅读并同意本协议。\n\n"
+                    + "> 当前处于离线模式，以上为内置协议文本。";
 
     private void applyWindowInsets(ActivityUserAgreementBinding binding) {
         ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {

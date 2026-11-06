@@ -20,9 +20,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.fsy.plugin.sdl.library.SdlEngine;
-import cn.fsy.plugin.sdl.library.SdlException;
-import cn.fsy.plugin.sdl.library.plugin.Permissions;
+import cn.fsy.plugin.kore.library.KoreEngine;
+import cn.fsy.plugin.kore.library.KoreException;
+import cn.fsy.plugin.kore.library.plugin.Permissions;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.databinding.ItemPluginAuthPermissionBinding;
 import io.takamiya.mio.databinding.SheetPluginAuthBinding;
@@ -139,10 +139,10 @@ public class PluginAuthSheet {
 
         try {
             for (String name : grant) {
-                SdlEngine.grantPermission(pluginPackage, name);
+                KoreEngine.grantPermission(pluginPackage, name);
             }
             for (String name : revoke) {
-                SdlEngine.revokePermission(pluginPackage, name);
+                KoreEngine.revokePermission(pluginPackage, name);
             }
             AppLogger.i(TAG, "permissions updated for " + pluginPackage
                     + ": grant=" + grant + " revoke=" + revoke);
@@ -152,7 +152,7 @@ public class PluginAuthSheet {
                 msg += "，" + revoke.size() + " 项撤销";
             }
             Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
-        } catch (SdlException e) {
+        } catch (KoreException e) {
             AppLogger.e(TAG, "update permissions failed for " + pluginPackage + ": " + e.getMessage(), e);
             Toast.makeText(context, "保存失败：" + e.getMessage(), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
@@ -178,7 +178,7 @@ public class PluginAuthSheet {
             String name = p.optString("name");
             if (name.isEmpty()) continue;
             if (!p.has("desc")) {
-                Permissions perm = Permissions.fromName(name, null);
+                Permissions perm = Permissions.fromName(name).orElse(null);
                 if (perm != null) {
                     try {
                         p.put("desc", perm.getDescription());
@@ -193,7 +193,7 @@ public class PluginAuthSheet {
     /** 读回引擎已授予的权限，作为开关初始状态（可授权项才需要）。 */
     private void loadGrantedState() {
         try {
-            for (String name : SdlEngine.permissionsOf(pluginPackage)) {
+            for (String name : KoreEngine.permissionsOf(pluginPackage)) {
                 for (int i = 0; i < permissions.size(); i++) {
                     if (name.equals(permissions.get(i).optString("name"))) {
                         granted[i] = true;
@@ -208,7 +208,7 @@ public class PluginAuthSheet {
     private void computeRowStates() {
         for (int i = 0; i < permissions.size(); i++) {
             String name = permissions.get(i).optString("name");
-            Permissions perm = Permissions.fromName(name, null);
+            Permissions perm = Permissions.fromName(name).orElse(null);
             Permissions.Level level = perm != null ? perm.getLevel() : Permissions.Level.DANGEROUS;
 
             switch (level) {

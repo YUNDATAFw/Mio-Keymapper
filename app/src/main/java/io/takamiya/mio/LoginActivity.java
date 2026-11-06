@@ -38,6 +38,12 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 离线模式：登录页已停用，任何入口进来都直接回主页
+        startActivity(new Intent(this, HomeActivity.class));
+        finish();
+        if (true) return;
+
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         EdgeToEdge.enable(this);
         setContentView(binding.getRoot());

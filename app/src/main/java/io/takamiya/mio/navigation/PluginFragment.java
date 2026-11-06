@@ -27,10 +27,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.fsy.plugin.sdl.library.PluginCallback;
-import cn.fsy.plugin.sdl.library.SdlEngine;
-import cn.fsy.plugin.sdl.library.SdlException;
-import cn.fsy.plugin.sdl.library.plugin.PluginItem;
+import cn.fsy.plugin.kore.library.PluginCallback;
+import cn.fsy.plugin.kore.library.KoreEngine;
+import cn.fsy.plugin.kore.library.KoreException;
+import cn.fsy.plugin.kore.library.plugin.PluginItem;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.R;
 import io.takamiya.mio.PluginAuthSheet;
@@ -134,7 +134,7 @@ public class PluginFragment extends Fragment {
 
             Toast.makeText(requireContext(), "正在安装插件...", Toast.LENGTH_SHORT).show();
 
-            io.takamiya.mio.dsl.PluginResInstaller.install(requireContext(), zipFile.getAbsolutePath(), new PluginCallback() {
+            DslPluginManager.get().installFromFile(zipFile.getAbsolutePath(), new PluginCallback() {
                 @Override
                 public void onStart(java.nio.file.Path installPath) {}
 
@@ -142,7 +142,7 @@ public class PluginFragment extends Fragment {
                 public void onProgress(int progressPercent) {}
 
                 @Override
-                public void onSuccess(PluginItem item) {
+                public void onSuccess(cn.fsy.plugin.kore.library.plugin.PluginItem item) {
                     if (!isAdded()) return;
                     requireActivity().runOnUiThread(() -> {
                         Toast.makeText(requireContext(),
@@ -154,7 +154,7 @@ public class PluginFragment extends Fragment {
                 }
 
                 @Override
-                public void onFailure(SdlException error) {
+                public void onFailure(cn.fsy.plugin.kore.library.KoreException error) {
                     if (!isAdded()) return;
                     requireActivity().runOnUiThread(() ->
                         Toast.makeText(requireContext(),
@@ -224,7 +224,7 @@ public class PluginFragment extends Fragment {
      * 解析返回的 JSON 字符串/Map 后弹窗展示；句柄未打开时临时 open，结束关闭。
      */
     private void checkPluginUpdate(String pkg, String pluginName) {
-        if (!SdlEngine.isEnabled(pkg)) {
+        if (!KoreEngine.isEnabled(pkg)) {
             Toast.makeText(requireContext(), "插件未启用，无法检查更新", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -397,8 +397,8 @@ public class PluginFragment extends Fragment {
             boolean enabled = true;
             File iconFile = null;
             try {
-                enabled = SdlEngine.isEnabled(pkg);
-                iconFile = SdlEngine.pluginIconFile(pkg);
+                enabled = KoreEngine.isEnabled(pkg);
+                iconFile = KoreEngine.pluginIconFile(pkg);
             } catch (Exception e) {
                 AppLogger.e(TAG, "read plugin state failed: " + pkg + " - " + e.getMessage());
             }
@@ -418,7 +418,7 @@ public class PluginFragment extends Fragment {
                 try {
                     FloatingWindowService service = FloatingWindowService.getInstance();
                     if (checked) {
-                        SdlEngine.enablePlugin(pkg);
+                        KoreEngine.enablePlugin(pkg);
                         // 悬浮窗运行中：立即把插件重新加载进服务（关闭 → 打开 + 启动服务）
                         if (service != null) {
                             service.reloadDslPlugin(pkg);
@@ -432,7 +432,7 @@ public class PluginFragment extends Fragment {
                         DslPluginManager dm = DslPluginManager.get();
                         DslPluginHandle h = dm != null ? dm.getHandle(pkg) : null;
                         if (h != null) h.callIfExported("onDisable");
-                        SdlEngine.disablePlugin(pkg);
+                        KoreEngine.disablePlugin(pkg);
                         if (service != null) {
                             service.closeDslPlugin(pkg);
                         } else {

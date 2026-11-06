@@ -20,16 +20,6 @@
         android:label="配置" />
 
     <fragment
-        android:id="@+id/forum"
-        android:name="io.takamiya.mio.navigation.ForumFragment"
-        android:label="论坛" />
-
-    <fragment
-        android:id="@+id/user"
-        android:name="io.takamiya.mio.navigation.UserFragment"
-        android:label="账户" />
-
-    <fragment
         android:id="@+id/setting"
         android:name="io.takamiya.mio.navigation.SettingFragment"
         android:label="设置" />

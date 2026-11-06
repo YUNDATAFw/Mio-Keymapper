@@ -70,11 +70,11 @@ if (!aarDir.exists()) {
     aarDir.mkdirs()
 }
 aarDir.walkTopDown()
-    .filter { it.isFile && it.extension.equals("aar", ignoreCase = true) }
-    .forEach { aarFile ->
-        val aarName = aarFile.nameWithoutExtension
-        print("引入AAR包：$aarName (${aarFile.absolutePath})")
-        dependencies.add("implementation", files(aarFile.absolutePath))
+    .filter { it.isFile && (it.extension.equals("aar", ignoreCase = true) || it.extension.equals("jar", ignoreCase = true)) }
+    .forEach { libFile ->
+        val libName = libFile.nameWithoutExtension
+        print("引入库包：$libName (${libFile.absolutePath})")
+        dependencies.add("implementation", files(libFile.absolutePath))
     }
 
 dependencies {

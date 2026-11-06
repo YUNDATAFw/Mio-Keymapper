@@ -16,11 +16,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.fsy.plugin.sdl.library.PluginCallback;
-import cn.fsy.plugin.sdl.library.SdlEngine;
-import cn.fsy.plugin.sdl.library.SdlException;
-import cn.fsy.plugin.sdl.library.plugin.PluginItem;
+import cn.fsy.plugin.kore.library.PluginCallback;
+import cn.fsy.plugin.kore.library.KoreEngine;
+import cn.fsy.plugin.kore.library.KoreException;
+import cn.fsy.plugin.kore.library.plugin.PluginItem;
 import cn.panda.utils.library.AppLogger;
+import io.takamiya.mio.dsl.DslPluginManager;
 import java.nio.charset.StandardCharsets;
 import io.takamiya.mio.config.lhrb.LhrbReader;
 
@@ -165,9 +166,9 @@ public class PluginInstallActivity extends AppCompatActivity {
 
             Toast.makeText(this, "正在安装插件...", Toast.LENGTH_SHORT).show();
 
-            io.takamiya.mio.dsl.PluginResInstaller.install(this, zipFile.getAbsolutePath(), new PluginCallback() {
+            DslPluginManager.get().installFromFile(zipFile.getAbsolutePath(), new PluginCallback() {
                 @Override
-                public void onStart(Path installPath) {
+                public void onStart(java.nio.file.Path installPath) {
                     AppLogger.d(TAG, "ZIP install started: " + installPath);
                 }
 
@@ -176,7 +177,7 @@ public class PluginInstallActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onSuccess(PluginItem item) {
+                public void onSuccess(cn.fsy.plugin.kore.library.plugin.PluginItem item) {
                     runOnUiThread(() -> {
                         new MaterialAlertDialogBuilder(PluginInstallActivity.this)
                                 .setTitle("安装成功")
@@ -192,7 +193,7 @@ public class PluginInstallActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(SdlException error) {
+                public void onFailure(cn.fsy.plugin.kore.library.KoreException error) {
                     runOnUiThread(() ->
                         alertNext("安装失败", io.takamiya.mio.dsl.InstallErrors.describe(error))
                     );

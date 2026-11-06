@@ -7,10 +7,12 @@ import android.os.Bundle;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import cn.fsy.plugin.kore.library.KoreEngine;
+import cn.fsy.plugin.kore.library.config.PermissionRegistry;
+import cn.fsy.plugin.kore.library.config.PermissionDef;
 import cn.panda.utils.library.AppLogger;
 import cn.panda.utils.library.CrashHandler;
 import cn.panda.utils.library.UrlBuilder;
-import cn.fsy.plugin.sdl.library.SdlEngine;
 import io.takamiya.mio.BuildConfig;
 import io.takamiya.mio.dsl.MioBridgeRegistry;
 import io.takamiya.mio.floating.FloatingWindowService;
@@ -82,10 +84,16 @@ public class Mio extends Application {
                 .setBufferSize(4096)
                 .init(this);
 
-        // DSL 插件引擎初始化
-        SdlEngine.init(getApplicationContext());
+        // Kore 插件引擎初始化
+        KoreEngine.init(getApplicationContext());
+        
+        // 注册宿主自有桥接
         MioBridgeRegistry.register(getApplicationContext());
-        AppLogger.i(TAG, "SDL engine initialized, Mio bridges registered");
+        
+        // 注册自定义权限
+        registerCustomPermissions();
+        
+        AppLogger.i(TAG, "Kore engine initialized, Mio bridges registered");
 
         computeIntegrityHashesAsync();
 
@@ -165,5 +173,26 @@ public class Mio extends Application {
                 AppLogger.w(TAG, "compute integrity hashes failed: " + e.getMessage());
             }
         }).start();
+    }
+
+    private void registerCustomPermissions() {
+        cn.fsy.plugin.kore.library.config.PermissionRegistry.registerCustomPermission(
+            cn.fsy.plugin.kore.library.config.PermissionDef.builder("MIO_FLOATING_WINDOW", "io.takamiya.mio.perms")
+                .level(cn.fsy.plugin.kore.library.config.PermissionRegistry.LEVEL_DANGEROUS)
+                .desc("悬浮窗权限")
+                .hostIdPrefix("Mio.floating")
+                .build());
+        cn.fsy.plugin.kore.library.config.PermissionRegistry.registerCustomPermission(
+            cn.fsy.plugin.kore.library.config.PermissionDef.builder("MIO_INPUT_MONITOR", "io.takamiya.mio.perms")
+                .level(cn.fsy.plugin.kore.library.config.PermissionRegistry.LEVEL_DANGEROUS)
+                .desc("外接键鼠监听权限")
+                .hostIdPrefix("Mio.inputMonitor")
+                .build());
+        cn.fsy.plugin.kore.library.config.PermissionRegistry.registerCustomPermission(
+            cn.fsy.plugin.kore.library.config.PermissionDef.builder("MIO_GAMEPAD", "io.takamiya.mio.perms")
+                .level(cn.fsy.plugin.kore.library.config.PermissionRegistry.LEVEL_DANGEROUS)
+                .desc("虚拟手柄权限")
+                .hostIdPrefix("Mio.gamepad")
+                .build());
     }
 }

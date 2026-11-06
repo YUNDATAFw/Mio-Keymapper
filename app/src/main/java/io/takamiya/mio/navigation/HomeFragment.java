@@ -38,7 +38,7 @@ import io.takamiya.mio.PluginShopActivity;
 import io.takamiya.mio.GyroTestActivity;
 import io.takamiya.mio.ImeTestActivity;
 import io.takamiya.mio.PermissionActivity;
-import io.takamiya.mio.PermissionGuideActivity;
+
 import io.takamiya.mio.R;
 import io.takamiya.mio.ShizukuManageActivity;
 import io.takamiya.mio.app.Mio;
@@ -48,7 +48,7 @@ import io.takamiya.mio.databinding.ItemAnnouncementBinding;
 import io.takamiya.mio.floating.FloatingWindowService;
 import io.takamiya.mio.injector.ImeAutoSwitchHelper;
 import io.takamiya.mio.utils.DataManage;
-import io.takamiya.mio.utils.HttpManage;
+
 import io.takamiya.mio.utils.InputModelManager;
 import io.takamiya.mio.utils.RegistryUtils;
 import o.s.o.l;
@@ -119,7 +119,7 @@ public class HomeFragment extends Fragment {
 
         // 为什么需要这些权限按钮点击事件
         binding.btnWhyPermission.setOnClickListener(v -> {
-            startActivity(new Intent(requireContext(), PermissionGuideActivity.class));
+            // 离线模式：不支持权限引导页\n                    // startActivity(new Intent(requireContext(), PermissionGuideActivity.class));
         });
 
         // 插件管理 → 跳转到插件页面（抽屉"插件"目的地）
@@ -235,28 +235,8 @@ public class HomeFragment extends Fragment {
     private void loadAnnouncements() {
         if (announcementLoaded || !isAdded()) return;
         announcementLoaded = true;
-        HttpManage.getInstance().get(UrlBuilder.getInstance()
-                        .longPath(l.get().a()[107])
-                        .param("app_id", Mio.APP_ID)
-                        .param("version_code", String.valueOf(DeviceInfoUtils.getAppVersionCode(requireContext())))
-                        .build())
-                .onSuccess((code, body) -> {
-                    if (code != 200) return;
-                    try {
-                        JSONObject info = new JSONObject(body.trim());
-                        if (info.getInt("code") == 200) {
-                            JSONArray list = info.optJSONObject("data") != null
-                                    ? info.optJSONObject("data").optJSONArray("list") : null;
-                            if (list != null && list.length() > 0 && isAdded()) {
-                                postOnUiThread(() -> showAnnouncementSheet(list));
-                            }
-                        }
-                    } catch (Exception e) {
-                        AppLogger.e(TAG, "announcements parse error: " + e.getMessage());
-                    }
-                })
-                .onFailure((netCode, err) -> AppLogger.e(TAG, "announcements request failed: " + netCode + "," + err))
-                .execute();
+        // 离线模式：不加载远程公告
+        AppLogger.d(TAG, "loadAnnouncements: offline mode, skipping remote fetch");
     }
 
     private void showAnnouncementSheet(JSONArray list) {

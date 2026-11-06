@@ -6,8 +6,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.fsy.plugin.sdl.library.BridgeHandler;
-import cn.fsy.plugin.sdl.library.SdlException;
+import cn.fsy.plugin.kore.library.BridgeHandler;
+import cn.fsy.plugin.kore.library.KoreException;
 
 /**
  * Json 命名空间桥接实现。
@@ -29,7 +29,7 @@ public class JsonBridge {
                 if (s.startsWith("[")) return new JSONArray(s);
                 return raw;
             } catch (Exception e) {
-                throw new SdlException(SdlException.ErrorCode.INTERNAL_ERROR,
+                throw new KoreException(KoreException.ErrorCode.INTERNAL_ERROR,
                         "parse: JSON 解析失败 - " + e.getMessage());
             }
         };
@@ -79,7 +79,7 @@ public class JsonBridge {
         try {
             return new JSONObject(raw);
         } catch (Exception e) {
-            throw new SdlException(SdlException.ErrorCode.INTERNAL_ERROR,
+            throw new KoreException(KoreException.ErrorCode.INTERNAL_ERROR,
                     fn + ": 首参不是合法 JSON 对象 - " + e.getMessage());
         }
     }
@@ -109,7 +109,7 @@ public class JsonBridge {
 
     private static String str(Object[] args, int index, String fn) {
         if (args == null || index >= args.length || args[index] == null) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 缺少第 " + (index + 1) + " 个参数");
         }
         return args[index].toString();

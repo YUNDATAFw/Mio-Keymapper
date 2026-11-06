@@ -9,69 +9,27 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import cn.fsy.plugin.sdl.library.PluginCallback;
-import cn.fsy.plugin.sdl.library.SdlEngine;
-import cn.fsy.plugin.sdl.library.SdlException;
-import cn.fsy.plugin.sdl.library.internal.manage.open.OpenManager;
-import cn.fsy.plugin.sdl.library.plugin.PluginItem;
+import cn.fsy.plugin.kore.library.PluginCallback;
+import cn.fsy.plugin.kore.library.KoreEngine;
+import cn.fsy.plugin.kore.library.KoreException;
+import cn.fsy.plugin.kore.library.internal.manage.open.OpenManager;
+import cn.fsy.plugin.kore.library.plugin.PluginItem;
 import cn.panda.utils.library.AppLogger;
 
 /**
- * 插件安装入口：包装 {@link SdlEngine#install}，成功后从同一 zip 补抽 {@code res/*}
- * 到 {@code <pluginDir>/res/*}。
+ * 插件资源抽取工具：安装成功后从 zip 补抽 {@code res/*} 到 {@code <pluginDir>/res/*}。
  *
- * <p>引擎 doInstallPackage 只搬运 config.json / icon.png / script/**，zip 内其他文件
- * （如插件资源 res/）解到临时目录后不会落地，需宿主补抽。安全清单只盖 config/icon/script，
- * {@code verifyDigests} 为正向校验，额外文件不会被判篡改。</p>
+ * <p>Kore 安装流程：{@link Install} 完成解压、签名校验、安全校验、落盘到 {@code kore-plugins/{pkg}/}，
+ * 然后由 {@link DslPluginManager.installKoreZip} 调用本类的 {@code extractRes} 补抽资源。
  *
  * <p>资源路径在 onKeyInit 里以 "@res/..." 引用（见 MioEngFunBridge.resolveCardBg）。
- * 新增/更新 res 资源后需重新安装插件才会落地（覆盖安装会先清空 pluginDir）。</p>
+ * 新增/更新 res 资源后需重新安装插件才会落地（覆盖安装会先清空 pluginDir）。
  */
 public final class PluginResInstaller {
 
     private static final String TAG = "PluginResInstaller";
 
     private PluginResInstaller() {
-    }
-
-    /** 安装 zip，成功回调前补抽 res/* 到 pluginDir（失败只记日志，不阻断安装成功）。 */
-    public static void install(Context context, String zipPath, PluginCallback callback) {
-        Context app = context.getApplicationContext();
-        SdlEngine.install(zipPath, wrap(app, zipPath, callback));
-    }
-
-    static PluginCallback wrap(Context app, String zipPath, PluginCallback callback) {
-        return new PluginCallback() {
-            @Override
-            public void onStart(java.nio.file.Path installPath) {
-                if (callback != null) callback.onStart(installPath);
-            }
-
-            @Override
-            public void onProgress(int progressPercent) {
-                if (callback != null) callback.onProgress(progressPercent);
-            }
-
-            @Override
-            public void onSuccess(PluginItem item) {
-                try {
-                    extractRes(app, zipPath, item != null ? item.getPluginPackage() : null);
-                } catch (Exception e) {
-                    AppLogger.w(TAG, "extract res failed: " + e.getMessage());
-                }
-                if (callback != null) callback.onSuccess(item);
-            }
-
-            @Override
-            public void onFailure(SdlException e) {
-                if (callback != null) callback.onFailure(e);
-            }
-
-            @Override
-            public void onCancel() {
-                if (callback != null) callback.onCancel();
-            }
-        };
     }
 
     /**

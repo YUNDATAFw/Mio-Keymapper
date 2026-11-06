@@ -114,7 +114,7 @@ public class FloatingMcidPanel {
     }
 
     private void loadData() {
-        McidRepository.loadAll(new McidRepository.Callback() {
+        McidRepository.loadAll(context, new McidRepository.Callback() {
             @Override
             public void onStart() {
                 AppLogger.d(TAG, "mcid loading started");
@@ -138,6 +138,11 @@ public class FloatingMcidPanel {
             @Override
             public void onError(String error) {
                 AppLogger.e(TAG, "load mcid failed: " + error);
+            }
+
+            @Override
+            public void onProgress(int loaded, int total) {
+                // 可选：更新进度 UI
             }
         });
     }

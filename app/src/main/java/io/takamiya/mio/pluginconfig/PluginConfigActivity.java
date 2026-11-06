@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.fsy.plugin.sdl.library.SdlEngine;
+import cn.fsy.plugin.kore.library.KoreEngine;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.R;
 import io.takamiya.mio.databinding.ActivityPluginConfigBinding;
@@ -231,16 +231,16 @@ public class PluginConfigActivity extends AppCompatActivity {
                 return;
             }
             try {
-                SdlEngine.setHostDataBatch(pkg, batch);
+                KoreEngine.setHostDataBatch(pkg, batch);
             } catch (RuntimeException first) {
                 // 存储损坏：隔离备份后重试一次（与 HostData.get 桥同一自愈路径）
                 if (!io.takamiya.mio.dsl.HostDataRepair.looksCorrupt(first)
                         || !io.takamiya.mio.dsl.HostDataRepair.heal(
-                                cn.fsy.plugin.sdl.library.internal.manage.open.OpenManager
+                                cn.fsy.plugin.kore.library.internal.manage.open.OpenManager
                                         .pluginDir(getFilesDir(), pkg), first)) {
                     throw first;
                 }
-                SdlEngine.setHostDataBatch(pkg, batch);
+                KoreEngine.setHostDataBatch(pkg, batch);
             }
             Toast.makeText(this, "已保存，插件即将重启生效", Toast.LENGTH_SHORT).show();
             reloadPlugin(pkg);

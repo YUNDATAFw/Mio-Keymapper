@@ -1,0 +1,243 @@
+{
+  "source": "minecraft.wiki + zh.minecraft.wiki",
+  "edition": "Java Edition",
+  "total": 40,
+  "effects": [
+    {
+      "name": "Speed",
+      "resource_location": "speed",
+      "id": 1,
+      "name_cn": "迅捷"
+    },
+    {
+      "name": "Slowness",
+      "resource_location": "slowness",
+      "id": 2,
+      "name_cn": "緩速"
+    },
+    {
+      "name": "Haste",
+      "resource_location": "haste",
+      "id": 3,
+      "name_cn": "急迫"
+    },
+    {
+      "name": "Mining Fatigue",
+      "resource_location": "mining_fatigue",
+      "id": 4,
+      "name_cn": "挖掘疲劳"
+    },
+    {
+      "name": "Strength",
+      "resource_location": "strength",
+      "id": 5,
+      "name_cn": "力量"
+    },
+    {
+      "name": "Instant Health",
+      "resource_location": "instant_health",
+      "id": 6,
+      "name_cn": "瞬间治疗"
+    },
+    {
+      "name": "Instant Damage",
+      "resource_location": "instant_damage",
+      "id": 7,
+      "name_cn": "瞬间伤害"
+    },
+    {
+      "name": "Jump Boost",
+      "resource_location": "jump_boost",
+      "id": 8,
+      "name_cn": "跳跃提升"
+    },
+    {
+      "name": "Nausea",
+      "resource_location": "nausea",
+      "id": 9,
+      "name_cn": "反胃"
+    },
+    {
+      "name": "Regeneration",
+      "resource_location": "regeneration",
+      "id": 10,
+      "name_cn": "生命恢复"
+    },
+    {
+      "name": "Resistance",
+      "resource_location": "resistance",
+      "id": 11,
+      "name_cn": "抗性提升"
+    },
+    {
+      "name": "Fire Resistance",
+      "resource_location": "fire_resistance",
+      "id": 12,
+      "name_cn": "抗火"
+    },
+    {
+      "name": "Water Breathing",
+      "resource_location": "water_breathing",
+      "id": 13,
+      "name_cn": "水下呼吸"
+    },
+    {
+      "name": "Invisibility",
+      "resource_location": "invisibility",
+      "id": 14,
+      "name_cn": "隐身"
+    },
+    {
+      "name": "Blindness",
+      "resource_location": "blindness",
+      "id": 15,
+      "name_cn": "失明"
+    },
+    {
+      "name": "Night Vision",
+      "resource_location": "night_vision",
+      "id": 16,
+      "name_cn": "夜视"
+    },
+    {
+      "name": "Hunger",
+      "resource_location": "hunger",
+      "id": 17,
+      "name_cn": "饥饿"
+    },
+    {
+      "name": "Weakness",
+      "resource_location": "weakness",
+      "id": 18,
+      "name_cn": "虚弱"
+    },
+    {
+      "name": "Poison",
+      "resource_location": "poison",
+      "id": 19,
+      "name_cn": "中毒"
+    },
+    {
+      "name": "Wither",
+      "resource_location": "wither",
+      "id": 20,
+      "name_cn": "凋零"
+    },
+    {
+      "name": "Health Boost",
+      "resource_location": "health_boost",
+      "id": 21,
+      "name_cn": "生命提升"
+    },
+    {
+      "name": "Absorption",
+      "resource_location": "absorption",
+      "id": 22,
+      "name_cn": "伤害吸收"
+    },
+    {
+      "name": "Saturation",
+      "resource_location": "saturation",
+      "id": 23,
+      "name_cn": "饱和"
+    },
+    {
+      "name": "Levitation",
+      "resource_location": "levitation",
+      "id": 24,
+      "name_cn": "飘浮"
+    },
+    {
+      "name": "Slow Falling",
+      "resource_location": "slow_falling",
+      "id": 26,
+      "name_cn": "缓降"
+    },
+    {
+      "name": "Conduit Power",
+      "resource_location": "conduit_power",
+      "id": 27,
+      "name_cn": "潮涌能量"
+    },
+    {
+      "name": "Bad Omen",
+      "resource_location": "bad_omen",
+      "id": 28,
+      "name_cn": "不祥之兆"
+    },
+    {
+      "name": "Hero of the Village",
+      "resource_location": "hero_of_the_village",
+      "id": 29,
+      "name_cn": "村庄英雄"
+    },
+    {
+      "name": "Darkness",
+      "resource_location": "darkness",
+      "id": 30,
+      "name_cn": "黑暗"
+    },
+    {
+      "name": "Trial Omen",
+      "resource_location": "trial_omen",
+      "id": 31,
+      "name_cn": "试炼之兆"
+    },
+    {
+      "name": "Raid Omen",
+      "resource_location": "raid_omen",
+      "id": 32,
+      "name_cn": "袭击之兆"
+    },
+    {
+      "name": "Wind Charged",
+      "resource_location": "wind_charged",
+      "id": 33,
+      "name_cn": "蓄风"
+    },
+    {
+      "name": "Weaving",
+      "resource_location": "weaving",
+      "id": 34,
+      "name_cn": "盘丝"
+    },
+    {
+      "name": "Oozing",
+      "resource_location": "oozing",
+      "id": 35,
+      "name_cn": "渗浆"
+    },
+    {
+      "name": "Infested",
+      "resource_location": "infested",
+      "id": 36,
+      "name_cn": "寄生"
+    },
+    {
+      "name": "Breath of the Nautilus",
+      "resource_location": "breath_of_the_nautilus",
+      "id": 37,
+      "name_cn": "鹦鹉螺之息"
+    },
+    {
+      "name": "Bad Luck",
+      "resource_location": "unluck",
+      "name_cn": "霉运"
+    },
+    {
+      "name": "Dolphin's Grace",
+      "resource_location": "dolphins_grace",
+      "name_cn": "海豚的恩惠"
+    },
+    {
+      "name": "Glowing",
+      "resource_location": "glowing",
+      "name_cn": "发光"
+    },
+    {
+      "name": "Luck",
+      "resource_location": "luck",
+      "name_cn": "幸运"
+    }
+  ]
+}

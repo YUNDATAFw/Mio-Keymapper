@@ -6,11 +6,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import cn.fsy.plugin.sdl.library.BridgeHandler;
-import cn.fsy.plugin.sdl.library.internal.manage.open.OpenManager;
-import cn.fsy.plugin.sdl.library.internal.registry.RegistryManagerHolder;
-import cn.fsy.plugin.sdl.library.internal.running.AstInterpreter;
-import cn.fsy.plugin.sdl.library.internal.running.PermissionGuard;
+import cn.fsy.plugin.kore.library.BridgeHandler;
+import cn.fsy.plugin.kore.library.internal.manage.open.OpenManager;
+import cn.fsy.plugin.kore.library.internal.registry.RegistryManagerHolder;
+import cn.fsy.plugin.kore.library.internal.running.AstInterpreter;
+import cn.fsy.plugin.kore.library.internal.running.PermissionGuard;
 import cn.panda.utils.library.AppLogger;
 
 /**

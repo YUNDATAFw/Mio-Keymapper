@@ -18,11 +18,11 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.json.JSONArray;
 
-import cn.fsy.plugin.sdl.library.BridgeHandler;
-import cn.fsy.plugin.sdl.library.SdlException;
-import cn.fsy.plugin.sdl.library.internal.manage.open.OpenManager;
-import cn.fsy.plugin.sdl.library.plugin.PluginItem;
-import cn.fsy.plugin.sdl.library.SdlEngine;
+import cn.fsy.plugin.kore.library.BridgeHandler;
+import cn.fsy.plugin.kore.library.KoreException;
+import cn.fsy.plugin.kore.library.internal.manage.open.OpenManager;
+import cn.fsy.plugin.kore.library.plugin.PluginItem;
+import cn.fsy.plugin.kore.library.KoreEngine;
 import cn.panda.utils.library.AppLogger;
 import cn.panda.utils.library.Registry.Registry;
 import io.takamiya.mio.R;
@@ -52,7 +52,7 @@ import io.takamiya.mio.utils.RegistryUtils;
  * 约定：
  * - 动作类函数返回 Boolean 表示是否执行成功（注入器不可用/注入异常返回 false）；
  * - 查询类按真实类型返回（Bool/Int/String）；
- * - 参数缺失或类型错误抛出 {@link SdlException(INVALID_ARGUMENT)}，由执行层统一记录。
+ * - 参数缺失或类型错误抛出 {@link KoreException(INVALID_ARGUMENT)}，由执行层统一记录。
  */
 public class MioEngFunBridge {
 
@@ -277,11 +277,11 @@ public class MioEngFunBridge {
                     || "PRESSURE_PLATE".equals(triggerModelStr)) {
                 triggerModel = TriggerModel.fromString(triggerModelStr);
             } else {
-                throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+                throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                         "onKeyInit: 未知触发模式 " + triggerModelStr + "（可选 BUTTON/SWITCH/PRESSURE_PLATE）");
             }
             if (id.isEmpty()) {
-                throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT, "onKeyInit: id 不能为空");
+                throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT, "onKeyInit: id 不能为空");
             }
 
             ActionItem actionItem = new ActionItem();
@@ -353,11 +353,11 @@ public class MioEngFunBridge {
                 // 与 onKeyInit 同一取值校验；触发执行链按缺省 BUTTON 解析即无差异
                 TriggerModel.fromString(triggerModelStr);
             } else {
-                throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+                throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                         "onPhysicalKeyInit: 未知触发模式 " + triggerModelStr + "（可选 BUTTON/SWITCH/PRESSURE_PLATE）");
             }
             if (id.isEmpty()) {
-                throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT, "onPhysicalKeyInit: id 不能为空");
+                throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT, "onPhysicalKeyInit: id 不能为空");
             }
 
             String trimmed = rawKey.trim();
@@ -458,7 +458,7 @@ public class MioEngFunBridge {
     private static String resolvePluginName(String pkg) {
         if (pkg == null || pkg.isEmpty()) return "插件";
         try {
-            PluginItem info = SdlEngine.pluginInfo(pkg);
+            PluginItem info = KoreEngine.pluginInfo(pkg);
             String name = info != null ? info.getPluginName() : null;
             if (name != null && !name.isEmpty()) return name;
         } catch (Throwable t) {
@@ -736,7 +736,7 @@ public class MioEngFunBridge {
             List<Object> keyNames = list(args, 0, "tapGroup");
             int pressMs = num(args, 1, "tapGroup");
             if (keyNames.isEmpty()) {
-                throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT, "tapGroup: 按键列表不能为空");
+                throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT, "tapGroup: 按键列表不能为空");
             }
             int[] codes = new int[keyNames.size()];
             for (int i = 0; i < keyNames.size(); i++) {
@@ -882,7 +882,7 @@ public class MioEngFunBridge {
 
     private static String str(Object[] args, int index, String fn) {
         if (args == null || index >= args.length || args[index] == null) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 缺少第 " + (index + 1) + " 个参数");
         }
         return args[index].toString();
@@ -899,7 +899,7 @@ public class MioEngFunBridge {
 
     private static int num(Object[] args, int index, String fn) {
         if (args == null || index >= args.length || args[index] == null) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 缺少第 " + (index + 1) + " 个参数");
         }
         Object o = args[index];
@@ -907,14 +907,14 @@ public class MioEngFunBridge {
         try {
             return Integer.parseInt(o.toString());
         } catch (NumberFormatException e) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 第 " + (index + 1) + " 个参数必须为整数");
         }
     }
 
     private static List<Object> list(Object[] args, int index, String fn) {
         if (args == null || index >= args.length || args[index] == null) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 缺少第 " + (index + 1) + " 个参数");
         }
         Object o = args[index];
@@ -934,14 +934,14 @@ public class MioEngFunBridge {
             }
             return list;
         }
-        throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+        throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                 fn + ": 第 " + (index + 1) + " 个参数必须为按键列表");
     }
 
     private static int requireKeyCode(String keyName, String fn) {
         int code = KeyMapping.getKeyCode(keyName);
         if (code == 0) {
-            throw new SdlException(SdlException.ErrorCode.INVALID_ARGUMENT,
+            throw new KoreException(KoreException.ErrorCode.INVALID_ARGUMENT,
                     fn + ": 未知按键名 " + keyName);
         }
         return code;

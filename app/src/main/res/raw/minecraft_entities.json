@@ -1,0 +1,907 @@
+{
+  "source": "minecraft-data + zh.minecraft.wiki",
+  "edition": "Java Edition",
+  "total": 150,
+  "entities": [
+    {
+      "name": "Acacia Boat",
+      "id": 0,
+      "internal_name": "acacia_boat",
+      "name_cn": "金合欢木船"
+    },
+    {
+      "name": "Acacia Boat with Chest",
+      "id": 1,
+      "internal_name": "acacia_chest_boat",
+      "name_cn": "金合欢木运输船"
+    },
+    {
+      "name": "Allay",
+      "id": 2,
+      "internal_name": "allay",
+      "name_cn": "悦灵"
+    },
+    {
+      "name": "Area Effect Cloud",
+      "id": 3,
+      "internal_name": "area_effect_cloud",
+      "name_cn": "区域效果云"
+    },
+    {
+      "name": "Armadillo",
+      "id": 4,
+      "internal_name": "armadillo",
+      "name_cn": "犰狳"
+    },
+    {
+      "name": "Armor Stand",
+      "id": 5,
+      "internal_name": "armor_stand",
+      "name_cn": "盔甲架"
+    },
+    {
+      "name": "Arrow",
+      "id": 6,
+      "internal_name": "arrow",
+      "name_cn": "箭"
+    },
+    {
+      "name": "Axolotl",
+      "id": 7,
+      "internal_name": "axolotl",
+      "name_cn": "美西螈"
+    },
+    {
+      "name": "Bamboo Raft with Chest",
+      "id": 8,
+      "internal_name": "bamboo_chest_raft",
+      "name_cn": "运输竹筏"
+    },
+    {
+      "name": "Bamboo Raft",
+      "id": 9,
+      "internal_name": "bamboo_raft",
+      "name_cn": "竹筏"
+    },
+    {
+      "name": "Bat",
+      "id": 10,
+      "internal_name": "bat",
+      "name_cn": "蝙蝠"
+    },
+    {
+      "name": "Bee",
+      "id": 11,
+      "internal_name": "bee",
+      "name_cn": "蜜蜂"
+    },
+    {
+      "name": "Birch Boat",
+      "id": 12,
+      "internal_name": "birch_boat",
+      "name_cn": "白桦木船"
+    },
+    {
+      "name": "Birch Boat with Chest",
+      "id": 13,
+      "internal_name": "birch_chest_boat",
+      "name_cn": "白桦木运输船"
+    },
+    {
+      "name": "Blaze",
+      "id": 14,
+      "internal_name": "blaze",
+      "name_cn": "烈焰人"
+    },
+    {
+      "name": "Block Display",
+      "id": 15,
+      "internal_name": "block_display",
+      "name_cn": "方块展示实体"
+    },
+    {
+      "name": "Bogged",
+      "id": 16,
+      "internal_name": "bogged",
+      "name_cn": "沼骸"
+    },
+    {
+      "name": "Breeze",
+      "id": 17,
+      "internal_name": "breeze",
+      "name_cn": "旋风人"
+    },
+    {
+      "name": "Wind Charge",
+      "id": 18,
+      "internal_name": "breeze_wind_charge",
+      "name_cn": "风弹"
+    },
+    {
+      "name": "Camel",
+      "id": 19,
+      "internal_name": "camel",
+      "name_cn": "骆驼"
+    },
+    {
+      "name": "Cat",
+      "id": 20,
+      "internal_name": "cat",
+      "name_cn": "猫"
+    },
+    {
+      "name": "Cave Spider",
+      "id": 21,
+      "internal_name": "cave_spider",
+      "name_cn": "洞穴蜘蛛"
+    },
+    {
+      "name": "Cherry Boat",
+      "id": 22,
+      "internal_name": "cherry_boat",
+      "name_cn": "樱花木船"
+    },
+    {
+      "name": "Cherry Boat with Chest",
+      "id": 23,
+      "internal_name": "cherry_chest_boat",
+      "name_cn": "樱花木运输船"
+    },
+    {
+      "name": "Minecart with Chest",
+      "id": 24,
+      "internal_name": "chest_minecart",
+      "name_cn": "运输矿车"
+    },
+    {
+      "name": "Chicken",
+      "id": 25,
+      "internal_name": "chicken",
+      "name_cn": "鸡"
+    },
+    {
+      "name": "Cod",
+      "id": 26,
+      "internal_name": "cod",
+      "name_cn": "鳕鱼"
+    },
+    {
+      "name": "Minecart with Command Block",
+      "id": 27,
+      "internal_name": "command_block_minecart",
+      "name_cn": "命令方块矿车"
+    },
+    {
+      "name": "Cow",
+      "id": 28,
+      "internal_name": "cow",
+      "name_cn": "牛"
+    },
+    {
+      "name": "Creaking",
+      "id": 29,
+      "internal_name": "creaking",
+      "name_cn": "嘎枝"
+    },
+    {
+      "name": "Creeper",
+      "id": 30,
+      "internal_name": "creeper",
+      "name_cn": "苦力怕"
+    },
+    {
+      "name": "Dark Oak Boat",
+      "id": 31,
+      "internal_name": "dark_oak_boat",
+      "name_cn": "深色橡木船"
+    },
+    {
+      "name": "Dark Oak Boat with Chest",
+      "id": 32,
+      "internal_name": "dark_oak_chest_boat",
+      "name_cn": "深色橡木运输船"
+    },
+    {
+      "name": "Dolphin",
+      "id": 33,
+      "internal_name": "dolphin",
+      "name_cn": "海豚"
+    },
+    {
+      "name": "Donkey",
+      "id": 34,
+      "internal_name": "donkey",
+      "name_cn": "驴"
+    },
+    {
+      "name": "Dragon Fireball",
+      "id": 35,
+      "internal_name": "dragon_fireball",
+      "name_cn": "末影龙火球"
+    },
+    {
+      "name": "Drowned",
+      "id": 36,
+      "internal_name": "drowned",
+      "name_cn": "溺尸"
+    },
+    {
+      "name": "Thrown Egg",
+      "id": 37,
+      "internal_name": "egg",
+      "name_cn": "掷出的鸡蛋"
+    },
+    {
+      "name": "Elder Guardian",
+      "id": 38,
+      "internal_name": "elder_guardian",
+      "name_cn": "远古守卫者"
+    },
+    {
+      "name": "Enderman",
+      "id": 39,
+      "internal_name": "enderman",
+      "name_cn": "末影人"
+    },
+    {
+      "name": "Endermite",
+      "id": 40,
+      "internal_name": "endermite",
+      "name_cn": "末影螨"
+    },
+    {
+      "name": "Ender Dragon",
+      "id": 41,
+      "internal_name": "ender_dragon",
+      "name_cn": "末影龙"
+    },
+    {
+      "name": "Thrown Ender Pearl",
+      "id": 42,
+      "internal_name": "ender_pearl",
+      "name_cn": "掷出的末影珍珠"
+    },
+    {
+      "name": "End Crystal",
+      "id": 43,
+      "internal_name": "end_crystal",
+      "name_cn": "末地水晶"
+    },
+    {
+      "name": "Evoker",
+      "id": 44,
+      "internal_name": "evoker",
+      "name_cn": "唤魔者"
+    },
+    {
+      "name": "Evoker Fangs",
+      "id": 45,
+      "internal_name": "evoker_fangs",
+      "name_cn": "唤魔者尖牙"
+    },
+    {
+      "name": "Thrown Bottle o' Enchanting",
+      "id": 46,
+      "internal_name": "experience_bottle",
+      "name_cn": "掷出的附魔之瓶"
+    },
+    {
+      "name": "Experience Orb",
+      "id": 47,
+      "internal_name": "experience_orb",
+      "name_cn": "经验球"
+    },
+    {
+      "name": "Eye of Ender",
+      "id": 48,
+      "internal_name": "eye_of_ender",
+      "name_cn": "末影之眼"
+    },
+    {
+      "name": "Falling Block",
+      "id": 49,
+      "internal_name": "falling_block",
+      "name_cn": "下落的方块"
+    },
+    {
+      "name": "Fireball",
+      "id": 50,
+      "internal_name": "fireball",
+      "name_cn": "火球"
+    },
+    {
+      "name": "Firework Rocket",
+      "id": 51,
+      "internal_name": "firework_rocket",
+      "name_cn": "烟花火箭"
+    },
+    {
+      "name": "Fox",
+      "id": 52,
+      "internal_name": "fox",
+      "name_cn": "狐狸"
+    },
+    {
+      "name": "Frog",
+      "id": 53,
+      "internal_name": "frog",
+      "name_cn": "青蛙"
+    },
+    {
+      "name": "Minecart with Furnace",
+      "id": 54,
+      "internal_name": "furnace_minecart",
+      "name_cn": "动力矿车"
+    },
+    {
+      "name": "Ghast",
+      "id": 55,
+      "internal_name": "ghast",
+      "name_cn": "恶魂"
+    },
+    {
+      "name": "Giant",
+      "id": 56,
+      "internal_name": "giant",
+      "name_cn": "巨人"
+    },
+    {
+      "name": "Glow Item Frame",
+      "id": 57,
+      "internal_name": "glow_item_frame",
+      "name_cn": "荧光物品展示框"
+    },
+    {
+      "name": "Glow Squid",
+      "id": 58,
+      "internal_name": "glow_squid",
+      "name_cn": "发光鱿鱼"
+    },
+    {
+      "name": "Goat",
+      "id": 59,
+      "internal_name": "goat",
+      "name_cn": "山羊"
+    },
+    {
+      "name": "Guardian",
+      "id": 60,
+      "internal_name": "guardian",
+      "name_cn": "守卫者"
+    },
+    {
+      "name": "Hoglin",
+      "id": 61,
+      "internal_name": "hoglin",
+      "name_cn": "疣猪兽"
+    },
+    {
+      "name": "Minecart with Hopper",
+      "id": 62,
+      "internal_name": "hopper_minecart",
+      "name_cn": "漏斗矿车"
+    },
+    {
+      "name": "Horse",
+      "id": 63,
+      "internal_name": "horse",
+      "name_cn": "马"
+    },
+    {
+      "name": "Husk",
+      "id": 64,
+      "internal_name": "husk",
+      "name_cn": "尸壳"
+    },
+    {
+      "name": "Illusioner",
+      "id": 65,
+      "internal_name": "illusioner",
+      "name_cn": "幻术师"
+    },
+    {
+      "name": "Interaction",
+      "id": 66,
+      "internal_name": "interaction",
+      "name_cn": "交互实体"
+    },
+    {
+      "name": "Iron Golem",
+      "id": 67,
+      "internal_name": "iron_golem",
+      "name_cn": "铁傀儡"
+    },
+    {
+      "name": "Item",
+      "id": 68,
+      "internal_name": "item",
+      "name_cn": "物品"
+    },
+    {
+      "name": "Item Display",
+      "id": 69,
+      "internal_name": "item_display",
+      "name_cn": "物品展示实体"
+    },
+    {
+      "name": "Item Frame",
+      "id": 70,
+      "internal_name": "item_frame",
+      "name_cn": "物品展示框"
+    },
+    {
+      "name": "Jungle Boat",
+      "id": 71,
+      "internal_name": "jungle_boat",
+      "name_cn": "丛林木船"
+    },
+    {
+      "name": "Jungle Boat with Chest",
+      "id": 72,
+      "internal_name": "jungle_chest_boat",
+      "name_cn": "丛林木运输船"
+    },
+    {
+      "name": "Leash Knot",
+      "id": 73,
+      "internal_name": "leash_knot",
+      "name_cn": "拴绳结"
+    },
+    {
+      "name": "Lightning Bolt",
+      "id": 74,
+      "internal_name": "lightning_bolt",
+      "name_cn": "闪电束"
+    },
+    {
+      "name": "Llama",
+      "id": 75,
+      "internal_name": "llama",
+      "name_cn": "羊驼"
+    },
+    {
+      "name": "Llama Spit",
+      "id": 76,
+      "internal_name": "llama_spit",
+      "name_cn": "羊驼唾沫"
+    },
+    {
+      "name": "Magma Cube",
+      "id": 77,
+      "internal_name": "magma_cube",
+      "name_cn": "岩浆怪"
+    },
+    {
+      "name": "Mangrove Boat",
+      "id": 78,
+      "internal_name": "mangrove_boat",
+      "name_cn": "红树木船"
+    },
+    {
+      "name": "Mangrove Boat with Chest",
+      "id": 79,
+      "internal_name": "mangrove_chest_boat",
+      "name_cn": "红树木运输船"
+    },
+    {
+      "name": "Marker",
+      "id": 80,
+      "internal_name": "marker",
+      "name_cn": "标记"
+    },
+    {
+      "name": "Minecart",
+      "id": 81,
+      "internal_name": "minecart",
+      "name_cn": "矿车"
+    },
+    {
+      "name": "Mooshroom",
+      "id": 82,
+      "internal_name": "mooshroom",
+      "name_cn": "哞菇"
+    },
+    {
+      "name": "Mule",
+      "id": 83,
+      "internal_name": "mule",
+      "name_cn": "骡"
+    },
+    {
+      "name": "Oak Boat",
+      "id": 84,
+      "internal_name": "oak_boat",
+      "name_cn": "橡木船"
+    },
+    {
+      "name": "Oak Boat with Chest",
+      "id": 85,
+      "internal_name": "oak_chest_boat",
+      "name_cn": "橡木运输船"
+    },
+    {
+      "name": "Ocelot",
+      "id": 86,
+      "internal_name": "ocelot",
+      "name_cn": "豹猫"
+    },
+    {
+      "name": "Ominous Item Spawner",
+      "id": 87,
+      "internal_name": "ominous_item_spawner",
+      "name_cn": "不祥之物生成器"
+    },
+    {
+      "name": "Painting",
+      "id": 88,
+      "internal_name": "painting",
+      "name_cn": "画"
+    },
+    {
+      "name": "Pale Oak Boat",
+      "id": 89,
+      "internal_name": "pale_oak_boat",
+      "name_cn": "苍白橡木船"
+    },
+    {
+      "name": "Pale Oak Boat with Chest",
+      "id": 90,
+      "internal_name": "pale_oak_chest_boat",
+      "name_cn": "苍白橡木运输船"
+    },
+    {
+      "name": "Panda",
+      "id": 91,
+      "internal_name": "panda",
+      "name_cn": "熊猫"
+    },
+    {
+      "name": "Parrot",
+      "id": 92,
+      "internal_name": "parrot",
+      "name_cn": "鹦鹉"
+    },
+    {
+      "name": "Phantom",
+      "id": 93,
+      "internal_name": "phantom",
+      "name_cn": "幻翼"
+    },
+    {
+      "name": "Pig",
+      "id": 94,
+      "internal_name": "pig",
+      "name_cn": "猪"
+    },
+    {
+      "name": "Piglin",
+      "id": 95,
+      "internal_name": "piglin",
+      "name_cn": "猪灵"
+    },
+    {
+      "name": "Piglin Brute",
+      "id": 96,
+      "internal_name": "piglin_brute",
+      "name_cn": "猪灵蛮兵"
+    },
+    {
+      "name": "Pillager",
+      "id": 97,
+      "internal_name": "pillager",
+      "name_cn": "掠夺者"
+    },
+    {
+      "name": "Polar Bear",
+      "id": 98,
+      "internal_name": "polar_bear",
+      "name_cn": "北极熊"
+    },
+    {
+      "name": "Splash Potion",
+      "id": 99,
+      "internal_name": "splash_potion",
+      "name_cn": "喷溅药水"
+    },
+    {
+      "name": "Lingering Potion",
+      "id": 100,
+      "internal_name": "lingering_potion",
+      "name_cn": "滞留药水"
+    },
+    {
+      "name": "Pufferfish",
+      "id": 101,
+      "internal_name": "pufferfish",
+      "name_cn": "河豚"
+    },
+    {
+      "name": "Rabbit",
+      "id": 102,
+      "internal_name": "rabbit",
+      "name_cn": "兔子"
+    },
+    {
+      "name": "Ravager",
+      "id": 103,
+      "internal_name": "ravager",
+      "name_cn": "劫掠兽"
+    },
+    {
+      "name": "Salmon",
+      "id": 104,
+      "internal_name": "salmon",
+      "name_cn": "鲑鱼"
+    },
+    {
+      "name": "Sheep",
+      "id": 105,
+      "internal_name": "sheep",
+      "name_cn": "绵羊"
+    },
+    {
+      "name": "Shulker",
+      "id": 106,
+      "internal_name": "shulker",
+      "name_cn": "潜影贝"
+    },
+    {
+      "name": "Shulker Bullet",
+      "id": 107,
+      "internal_name": "shulker_bullet",
+      "name_cn": "潜影弹"
+    },
+    {
+      "name": "Silverfish",
+      "id": 108,
+      "internal_name": "silverfish",
+      "name_cn": "蠹虫"
+    },
+    {
+      "name": "Skeleton",
+      "id": 109,
+      "internal_name": "skeleton",
+      "name_cn": "骷髅"
+    },
+    {
+      "name": "Skeleton Horse",
+      "id": 110,
+      "internal_name": "skeleton_horse",
+      "name_cn": "骷髅马"
+    },
+    {
+      "name": "Slime",
+      "id": 111,
+      "internal_name": "slime",
+      "name_cn": "史莱姆"
+    },
+    {
+      "name": "Small Fireball",
+      "id": 112,
+      "internal_name": "small_fireball",
+      "name_cn": "小火球"
+    },
+    {
+      "name": "Sniffer",
+      "id": 113,
+      "internal_name": "sniffer",
+      "name_cn": "嗅探兽"
+    },
+    {
+      "name": "Snowball",
+      "id": 114,
+      "internal_name": "snowball",
+      "name_cn": "雪球"
+    },
+    {
+      "name": "Snow Golem",
+      "id": 115,
+      "internal_name": "snow_golem",
+      "name_cn": "雪傀儡"
+    },
+    {
+      "name": "Minecart with Monster Spawner",
+      "id": 116,
+      "internal_name": "spawner_minecart",
+      "name_cn": "刷怪笼矿车"
+    },
+    {
+      "name": "Spectral Arrow",
+      "id": 117,
+      "internal_name": "spectral_arrow",
+      "name_cn": "光灵箭"
+    },
+    {
+      "name": "Spider",
+      "id": 118,
+      "internal_name": "spider",
+      "name_cn": "蜘蛛"
+    },
+    {
+      "name": "Spruce Boat",
+      "id": 119,
+      "internal_name": "spruce_boat",
+      "name_cn": "云杉木船"
+    },
+    {
+      "name": "Spruce Boat with Chest",
+      "id": 120,
+      "internal_name": "spruce_chest_boat",
+      "name_cn": "云杉木运输船"
+    },
+    {
+      "name": "Squid",
+      "id": 121,
+      "internal_name": "squid",
+      "name_cn": "鱿鱼"
+    },
+    {
+      "name": "Stray",
+      "id": 122,
+      "internal_name": "stray",
+      "name_cn": "流浪者"
+    },
+    {
+      "name": "Strider",
+      "id": 123,
+      "internal_name": "strider",
+      "name_cn": "炽足兽"
+    },
+    {
+      "name": "Tadpole",
+      "id": 124,
+      "internal_name": "tadpole",
+      "name_cn": "蝌蚪"
+    },
+    {
+      "name": "Text Display",
+      "id": 125,
+      "internal_name": "text_display",
+      "name_cn": "文本展示实体"
+    },
+    {
+      "name": "Primed TNT",
+      "id": 126,
+      "internal_name": "tnt",
+      "name_cn": "被激活的TNT"
+    },
+    {
+      "name": "Minecart with TNT",
+      "id": 127,
+      "internal_name": "tnt_minecart",
+      "name_cn": "TNT矿车"
+    },
+    {
+      "name": "Trader Llama",
+      "id": 128,
+      "internal_name": "trader_llama",
+      "name_cn": "行商羊驼"
+    },
+    {
+      "name": "Trident",
+      "id": 129,
+      "internal_name": "trident",
+      "name_cn": "三叉戟"
+    },
+    {
+      "name": "Tropical Fish",
+      "id": 130,
+      "internal_name": "tropical_fish",
+      "name_cn": "热带鱼"
+    },
+    {
+      "name": "Turtle",
+      "id": 131,
+      "internal_name": "turtle",
+      "name_cn": "海龟"
+    },
+    {
+      "name": "Vex",
+      "id": 132,
+      "internal_name": "vex",
+      "name_cn": "恼鬼"
+    },
+    {
+      "name": "Villager",
+      "id": 133,
+      "internal_name": "villager",
+      "name_cn": "村民"
+    },
+    {
+      "name": "Vindicator",
+      "id": 134,
+      "internal_name": "vindicator",
+      "name_cn": "卫道士"
+    },
+    {
+      "name": "Wandering Trader",
+      "id": 135,
+      "internal_name": "wandering_trader",
+      "name_cn": "流浪商人"
+    },
+    {
+      "name": "Warden",
+      "id": 136,
+      "internal_name": "warden",
+      "name_cn": "监守者"
+    },
+    {
+      "name": "Wind Charge",
+      "id": 137,
+      "internal_name": "wind_charge",
+      "name_cn": "风弹"
+    },
+    {
+      "name": "Witch",
+      "id": 138,
+      "internal_name": "witch",
+      "name_cn": "女巫"
+    },
+    {
+      "name": "Wither",
+      "id": 139,
+      "internal_name": "wither",
+      "name_cn": "凋灵"
+    },
+    {
+      "name": "Wither Skeleton",
+      "id": 140,
+      "internal_name": "wither_skeleton",
+      "name_cn": "凋灵骷髅"
+    },
+    {
+      "name": "Wither Skull",
+      "id": 141,
+      "internal_name": "wither_skull",
+      "name_cn": "凋灵之首"
+    },
+    {
+      "name": "Wolf",
+      "id": 142,
+      "internal_name": "wolf",
+      "name_cn": "狼"
+    },
+    {
+      "name": "Zoglin",
+      "id": 143,
+      "internal_name": "zoglin",
+      "name_cn": "僵尸疣猪兽"
+    },
+    {
+      "name": "Zombie",
+      "id": 144,
+      "internal_name": "zombie",
+      "name_cn": "僵尸"
+    },
+    {
+      "name": "Zombie Horse",
+      "id": 145,
+      "internal_name": "zombie_horse",
+      "name_cn": "僵尸马"
+    },
+    {
+      "name": "Zombie Villager",
+      "id": 146,
+      "internal_name": "zombie_villager",
+      "name_cn": "僵尸村民"
+    },
+    {
+      "name": "Zombified Piglin",
+      "id": 147,
+      "internal_name": "zombified_piglin",
+      "name_cn": "僵尸猪灵"
+    },
+    {
+      "name": "Player",
+      "id": 148,
+      "internal_name": "player",
+      "name_cn": "玩家"
+    },
+    {
+      "name": "Fishing Bobber",
+      "id": 149,
+      "internal_name": "fishing_bobber",
+      "name_cn": "浮漂"
+    }
+  ]
+}

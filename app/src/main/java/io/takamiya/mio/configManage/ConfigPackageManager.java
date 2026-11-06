@@ -175,16 +175,6 @@ public class ConfigPackageManager {
         return count;
     }
 
-    public void checkUpdates(ConfigUpdateChecker.Callback callback) {
-        List<Plugin> plugins = list();
-        ConfigUpdateChecker.checkAll(plugins, installer.getTrustedFingerprints(), callback);
-    }
-
-    public void silentUpdate(ConfigUpdateChecker.Consumer<List<InstallResult>> callback) {
-        List<Plugin> plugins = list();
-        ConfigUpdateChecker.silentUpdate(plugins, installer.getTrustedFingerprints(), this, callback);
-    }
-
     /** 受信任公钥指纹集合（内建工具密钥 ∪ 本应用自持密钥）。 */
     public java.util.Set<String> getTrustedFingerprints() {
         return installer.getTrustedFingerprints();

@@ -17,17 +17,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import cn.fsy.plugin.sdl.library.PluginCallback;
-import cn.fsy.plugin.sdl.library.SdlEngine;
-import cn.fsy.plugin.sdl.library.SdlException;
-import cn.fsy.plugin.sdl.library.config.CommonConfig;
-import cn.fsy.plugin.sdl.library.plugin.PluginItem;
+import cn.fsy.plugin.kore.library.PluginCallback;
+import cn.fsy.plugin.kore.library.KoreEngine;
+import cn.fsy.plugin.kore.library.KoreException;
+import cn.fsy.plugin.kore.library.config.CommonConfig;
+import cn.fsy.plugin.kore.library.plugin.PluginItem;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.dsl.bridge.MioEngFunBridge;
 import io.takamiya.mio.ws.WsEngineHolder;
 
 /**
- * DSL 插件管理器。
+ * DSL 插件管理器（Kore 版本）。
  * 负责插件的安装、打开、关闭、卸载，以及服务线程的生命周期管理。
  */
 public class DslPluginManager {
@@ -62,25 +62,25 @@ public class DslPluginManager {
         new Thread(() -> {
             try {
                 File zip = copyAssetToFilesDir(assetName);
-                PluginResInstaller.install(context, zip.getAbsolutePath(), callback);
+                KoreEngine.install(zip.getAbsolutePath(), callback);
             } catch (Exception e) {
                 AppLogger.e(TAG, "installFromAssets failed: " + e.getMessage(), e);
                 if (callback != null) {
-                    callback.onFailure(new SdlException(SdlException.ErrorCode.INSTALL_FAILED, e.getMessage()));
+                    callback.onFailure(new KoreException(KoreException.ErrorCode.INSTALL_FAILED, e.getMessage()));
                 }
             }
-        }, "dsl-install-asset").start();
+        }, "kore-install-asset").start();
     }
 
     /**
      * 从文件路径安装插件
-     * @param zipPath ZIP 文件完整路径
+     * @param zipPath ZIP 文件完整路径（.kore.zip 格式）
      * @param callback 安装回调
      */
     public void installFromFile(String zipPath, PluginCallback callback) {
         new Thread(() -> {
-            PluginResInstaller.install(context, zipPath, callback);
-        }, "dsl-install-file").start();
+            KoreEngine.install(zipPath, callback);
+        }, "kore-install-file").start();
     }
 
     // ==================== 打开 ====================
@@ -92,14 +92,69 @@ public class DslPluginManager {
      */
     public DslPluginHandle open(String packageName) {
         try {
-            SdlEngine.PluginHandle sdlHandle = SdlEngine.open(packageName);
-            DslPluginHandle handle = new DslPluginHandle(context, packageName, sdlHandle);
+            cn.fsy.plugin.kore.library.KoreEngine.PluginHandle koreHandle = KoreEngine.open(packageName);
+            // 关键：打开后必须显式授权基础权限（Kore 所有权限需显式 grant）
+            grantDefaultPermissions(koreHandle);
+            DslPluginHandle handle = new DslPluginHandle(context, packageName, koreHandle);
             handles.put(packageName, handle);
             AppLogger.i(TAG, "open: " + packageName);
             return handle;
-        } catch (SdlException e) {
+        } catch (KoreException e) {
             AppLogger.e(TAG, "open failed: " + packageName + " - " + e.getMessage());
             return null;
+        }
+    }
+
+    /**
+     * 授予插件运行最小权限集（打开后立即调用）
+     */
+    private void grantDefaultPermissions(cn.fsy.plugin.kore.library.KoreEngine.PluginHandle handle) {
+        String[] perms = {
+                "NETWORK_ACCESS",
+                "SHARED_DATA_READ",
+                "SHARED_DATA_WRITE",
+                "HOST_DATA_READ",
+                "HOST_DATA_WRITE"
+        };
+        for (String p : perms) {
+            try {
+                handle.permissionGuard().grant(p);
+            } catch (Exception e) {
+                AppLogger.w(TAG, "grant default perm failed: " + p + " - " + e.getMessage());
+            }
+        }
+        // 额外：读取 plugin.json 声明的权限并授予
+        grantDeclaredPermissions(handle);
+    }
+
+    /**
+     * 读取 plugin.json 中的 permissions 并逐个授予
+     */
+    private void grantDeclaredPermissions(cn.fsy.plugin.kore.library.KoreEngine.PluginHandle handle) {
+        try {
+            File cfg = new File(new File(context.getFilesDir(), "kore-plugins"), handle.packageName() + "/plugin.json");
+            if (!cfg.isFile()) return;
+            try (InputStream in = new FileInputStream(cfg)) {
+                byte[] buf = new byte[(int) cfg.length()];
+                int off = 0;
+                while (off < buf.length) {
+                    int r = in.read(buf, off, buf.length - off);
+                    if (r < 0) break;
+                    off += r;
+                }
+                JSONObject plugin = new JSONObject(new String(buf, StandardCharsets.UTF_8)).optJSONObject("plugin");
+                JSONArray arr = plugin != null ? plugin.optJSONArray("permissions") : null;
+                if (arr != null) {
+                    for (int i = 0; i < arr.length(); i++) {
+                        String name = arr.optString(i, "");
+                        if (!name.isEmpty()) {
+                            try { handle.permissionGuard().grant(name); } catch (Exception ignore) {}
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            AppLogger.w(TAG, "grantDeclaredPermissions failed: " + e.getMessage());
         }
     }
 
@@ -127,8 +182,34 @@ public class DslPluginManager {
             handle.callIfExported("onUninstall");
         }
         close(packageName);
-        SdlEngine.uninstall(packageName, callback);
+        KoreEngine.uninstall(packageName, callback);
         AppLogger.i(TAG, "uninstall: " + packageName);
+    }
+
+    // ==================== 启用/禁用 ====================
+
+    public void enablePlugin(String packageName) {
+        try {
+            KoreEngine.enablePlugin(packageName);
+        } catch (Exception e) {
+            AppLogger.e(TAG, "enablePlugin failed: " + packageName + " - " + e.getMessage());
+        }
+    }
+
+    public void disablePlugin(String packageName) {
+        try {
+            KoreEngine.disablePlugin(packageName);
+        } catch (Exception e) {
+            AppLogger.e(TAG, "disablePlugin failed: " + packageName + " - " + e.getMessage());
+        }
+    }
+
+    public boolean isEnabled(String packageName) {
+        try {
+            return KoreEngine.isEnabled(packageName);
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     // ==================== 查询 ====================
@@ -148,16 +229,16 @@ public class DslPluginManager {
     }
 
     /**
-     * 获取已安装的插件包名列表
+     * 获取已安装的插件包名列表（新目录结构：filesDir/kore-plugins/）
      */
     public List<String> getInstalledPackages() {
         List<String> result = new ArrayList<>();
-        File root = new File(context.getFilesDir(), CommonConfig.plugin_private_package);
+        File root = new File(context.getFilesDir(), "kore-plugins");
         if (root.isDirectory()) {
             File[] children = root.listFiles();
             if (children != null) {
                 for (File c : children) {
-                    if (c.isDirectory() && new File(c, "config.json").isFile()) {
+                    if (c.isDirectory() && new File(c, "plugin.json").isFile()) {
                         result.add(c.getName());
                     }
                 }
@@ -324,12 +405,12 @@ public class DslPluginManager {
     // ==================== 插件权限 ====================
 
     /**
-     * 读取插件 config.json 中声明的权限数组（{name, desc} 对象列表）。
+     * 读取插件 plugin.json 中声明的权限数组（{name, desc} 对象列表）。
      */
     public static JSONArray readDeclaredPermissions(Context ctx, String pluginPackage) {
-        File cfg = new File(new File(ctx.getFilesDir(), CommonConfig.plugin_private_package), pluginPackage + "/config.json");
+        File cfg = new File(new File(ctx.getFilesDir(), "kore-plugins"), pluginPackage + "/plugin.json");
         if (!cfg.isFile()) {
-            AppLogger.w(TAG, "config.json not found: " + cfg.getAbsolutePath());
+            AppLogger.w(TAG, "plugin.json not found: " + cfg.getAbsolutePath());
             return null;
         }
         try (InputStream in = new FileInputStream(cfg)) {
@@ -342,7 +423,7 @@ public class DslPluginManager {
             }
             JSONObject plugin = new JSONObject(new String(buf, StandardCharsets.UTF_8))
                     .optJSONObject("plugin");
-            return plugin != null ? plugin.optJSONArray("permission") : null;
+            return plugin != null ? plugin.optJSONArray("permissions") : null;
         } catch (Exception e) {
             AppLogger.e(TAG, "readDeclaredPermissions failed: " + pluginPackage + " - " + e.getMessage());
             return null;

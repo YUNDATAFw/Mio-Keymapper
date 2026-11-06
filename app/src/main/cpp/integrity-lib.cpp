@@ -19,6 +19,14 @@
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, INTEGRITY_TAG, __VA_ARGS__)
 
 // ═══════════════════════════════════════════════════════════════════════════
+// 本地调试总开关
+//   true  = 启用原有完整性门禁 / 反调试 / 监控强杀
+//   false = 完全关闭：不校验 verify_marker、不强杀 Activity/Service、
+//           不启动监控线程、不做反调试退出（仅保留 JNI 注册）
+// ═══════════════════════════════════════════════════════════════════════════
+static constexpr bool kIntegrityEnforcementEnabled = false;
+
+// ═══════════════════════════════════════════════════════════════════════════
 // 反调试 / 反 Frida / 安全擦除
 // ═══════════════════════════════════════════════════════════════════════════
 
@@ -1660,6 +1668,9 @@ nativeEnforceGateImpl(
         jclass /* clazz */,
         jobject activity) {
 
+    // 调试开关关闭时直接放行，不做任何 marker 校验/强杀
+    if (!kIntegrityEnforcementEnabled) return;
+
     if (activity == nullptr) return;
 
     // 排除 MainActivity(它本身就是写 marker 的入口,首次安装无 marker 须放行)
@@ -1696,6 +1707,9 @@ nativeEnforceServiceImpl(
         JNIEnv *env,
         jclass /* clazz */,
         jobject service) {
+
+    // 调试开关关闭时直接放行
+    if (!kIntegrityEnforcementEnabled) return JNI_TRUE;
 
     if (service == nullptr) return JNI_FALSE;
 
@@ -2028,8 +2042,8 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void * /* reserved */) 
     if (vm->GetEnv((void **) &env, JNI_VERSION_1_6) == JNI_OK && env != nullptr) {
         exemptHiddenApi(env);
 
-        // 反调试检测
-        if (detectAttack()) {
+        // 反调试检测（调试开关关闭时跳过，避免本地调试被强杀）
+        if (kIntegrityEnforcementEnabled && detectAttack()) {
             // JNI_OnLoad 没有 Context，通过 ActivityThread.currentApplication() 获取
             jobject appCtx = nullptr;
             jclass atClass = env->FindClass("android/app/ActivityThread");
@@ -2066,6 +2080,8 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void * /* reserved */) 
 
 // 幂等启动:重复调用只起一次
 static void ensureMonitorStarted() {
+    // 调试开关关闭时不启动监控线程（否则宽限期后仍会强杀 Activity/Service）
+    if (!kIntegrityEnforcementEnabled) return;
     if (g_monitorRunning) return;
     g_monitorRunning = true;
     g_graceUntilNanos = monotonicNanos() + (int64_t)kGraceSeconds * 1000000000LL;

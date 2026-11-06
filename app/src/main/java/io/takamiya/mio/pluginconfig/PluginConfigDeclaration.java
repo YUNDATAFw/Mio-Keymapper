@@ -15,10 +15,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.fsy.plugin.sdl.library.internal.manage.open.OpenManager;
-import cn.fsy.plugin.sdl.library.internal.registry.PandaRegistryFactory;
-import cn.fsy.plugin.sdl.library.internal.registry.RegistryManagerHolder;
-import cn.fsy.plugin.sdl.library.internal.registry.RegistryStore;
+import cn.fsy.plugin.kore.library.internal.manage.open.OpenManager;
+import cn.fsy.plugin.kore.library.internal.registry.PandaRegistryFactory;
+import cn.fsy.plugin.kore.library.internal.registry.RegistryManagerHolder;
+import cn.fsy.plugin.kore.library.internal.registry.RegistryStore;
 import cn.panda.utils.library.AppLogger;
 import io.takamiya.mio.app.Mio;
 import io.takamiya.mio.dsl.DslPluginHandle;
@@ -215,7 +215,7 @@ public final class PluginConfigDeclaration {
 
     private static DslPluginHandle ensureHandle(DslPluginManager manager, String packageName) {
         DslPluginHandle handle = manager.getHandle(packageName);
-        if (handle != null && handle.isEngineLoaded()) {
+        if (handle != null && handle.isLoaded()) {
             return handle;
         }
         if (handle != null) {

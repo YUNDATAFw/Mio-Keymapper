@@ -1,0 +1,396 @@
+{
+  "source": "minecraft.wiki + zh.minecraft.wiki",
+  "edition": "Bedrock Edition",
+  "total": 79,
+  "fog": [
+    {
+      "id": "minecraft:fog_bamboo_jungle",
+      "name": "Bamboo Jungle",
+      "name_cn": "竹林"
+    },
+    {
+      "id": "minecraft:fog_bamboo_jungle_hills",
+      "name": "Bamboo Jungle Hills",
+      "name_cn": "竹林丘陵"
+    },
+    {
+      "id": "minecraft:fog_basalt_deltas",
+      "name": "Basalt Deltas",
+      "name_cn": "玄武岩三角洲"
+    },
+    {
+      "id": "minecraft:fog_beach",
+      "name": "Beach",
+      "name_cn": "沙滩"
+    },
+    {
+      "id": "minecraft:fog_birch_forest",
+      "name": "Birch Forest",
+      "name_cn": "桦木森林"
+    },
+    {
+      "id": "minecraft:fog_birch_forest_hills",
+      "name": "Birch Forest Hills",
+      "name_cn": "桦木森林丘陵"
+    },
+    {
+      "id": "minecraft:fog_cherry_grove",
+      "name": "Cherry Grove",
+      "name_cn": "樱花树林"
+    },
+    {
+      "id": "minecraft:fog_cold_beach",
+      "name": "Cold Beach",
+      "name_cn": "积雪沙滩"
+    },
+    {
+      "id": "minecraft:fog_cold_ocean",
+      "name": "Cold Ocean",
+      "name_cn": "冷水海洋"
+    },
+    {
+      "id": "minecraft:fog_cold_taiga",
+      "name": "Cold Taiga",
+      "name_cn": "积雪针叶林"
+    },
+    {
+      "id": "minecraft:fog_cold_taiga_hills",
+      "name": "Cold Taiga Hills",
+      "name_cn": "积雪的针叶林丘陵"
+    },
+    {
+      "id": "minecraft:fog_cold_taiga_mutated",
+      "name": "Cold Taiga Mutated",
+      "name_cn": "积雪的针叶林山地"
+    },
+    {
+      "id": "minecraft:fog_crimson_forest",
+      "name": "Crimson Forest",
+      "name_cn": "绯红森林"
+    },
+    {
+      "id": "minecraft:fog_dappled_forest",
+      "name": "Dappled Forest"
+    },
+    {
+      "id": "minecraft:fog_deep_cold_ocean",
+      "name": "Deep Cold Ocean",
+      "name_cn": "冷水深海"
+    },
+    {
+      "id": "minecraft:fog_deep_frozen_ocean",
+      "name": "Deep Frozen Ocean",
+      "name_cn": "冰冻深海"
+    },
+    {
+      "id": "minecraft:fog_deep_lukewarm_ocean",
+      "name": "Deep Lukewarm Ocean",
+      "name_cn": "温水深海"
+    },
+    {
+      "id": "minecraft:fog_deep_ocean",
+      "name": "Deep Ocean",
+      "name_cn": "深海"
+    },
+    {
+      "id": "minecraft:fog_deep_warm_ocean",
+      "name": "Deep Warm Ocean",
+      "name_cn": "暖水深海"
+    },
+    {
+      "id": "minecraft:fog_default",
+      "name": "Default",
+      "name_cn": "默认"
+    },
+    {
+      "id": "minecraft:fog_desert",
+      "name": "Desert",
+      "name_cn": "沙漠"
+    },
+    {
+      "id": "minecraft:fog_desert_hills",
+      "name": "Desert Hills",
+      "name_cn": "沙漠丘陵"
+    },
+    {
+      "id": "minecraft:fog_dry",
+      "name": "Dry"
+    },
+    {
+      "id": "minecraft:fog_extreme_hills",
+      "name": "Extreme Hills",
+      "name_cn": "山地"
+    },
+    {
+      "id": "minecraft:fog_extreme_hills_edge",
+      "name": "Extreme Hills Edge",
+      "name_cn": "山地边缘"
+    },
+    {
+      "id": "minecraft:fog_extreme_hills_mutated",
+      "name": "Extreme Hills Mutated",
+      "name_cn": "沙砾山地"
+    },
+    {
+      "id": "minecraft:fog_extreme_hills_plus_trees",
+      "name": "Extreme Hills Plus Trees",
+      "name_cn": "繁茂的山地"
+    },
+    {
+      "id": "minecraft:fog_extreme_hills_plus_trees_mutated",
+      "name": "Extreme Hills Plus Trees Mutated",
+      "name_cn": "沙砾山地+"
+    },
+    {
+      "id": "minecraft:fog_flower_forest",
+      "name": "Flower Forest",
+      "name_cn": "繁花森林"
+    },
+    {
+      "id": "minecraft:fog_forest",
+      "name": "Forest",
+      "name_cn": "森林"
+    },
+    {
+      "id": "minecraft:fog_forest_hills",
+      "name": "Forest Hills",
+      "name_cn": "繁茂的丘陵"
+    },
+    {
+      "id": "minecraft:fog_frozen_ocean",
+      "name": "Frozen Ocean",
+      "name_cn": "冻洋"
+    },
+    {
+      "id": "minecraft:fog_frozen_river",
+      "name": "Frozen River",
+      "name_cn": "冻河"
+    },
+    {
+      "id": "minecraft:fog_hell",
+      "name": "Nether Wastes",
+      "name_cn": "下界荒地"
+    },
+    {
+      "id": "minecraft:fog_humid",
+      "name": "Humid"
+    },
+    {
+      "id": "minecraft:fog_ice_mountains",
+      "name": "Ice Mountains",
+      "name_cn": "雪山"
+    },
+    {
+      "id": "minecraft:fog_ice_plains",
+      "name": "Ice Plains",
+      "name_cn": "积雪的冻原"
+    },
+    {
+      "id": "minecraft:fog_ice_plains_spikes",
+      "name": "Ice Plains Spikes",
+      "name_cn": "冰刺之地"
+    },
+    {
+      "id": "minecraft:fog_jungle",
+      "name": "Jungle",
+      "name_cn": "丛林"
+    },
+    {
+      "id": "minecraft:fog_jungle_edge",
+      "name": "Jungle Edge",
+      "name_cn": "丛林边缘"
+    },
+    {
+      "id": "minecraft:fog_jungle_hills",
+      "name": "Jungle Hills",
+      "name_cn": "丛林丘陵"
+    },
+    {
+      "id": "minecraft:fog_jungle_mutated",
+      "name": "Jungle Mutated",
+      "name_cn": "丛林变种"
+    },
+    {
+      "id": "minecraft:fog_lukewarm_ocean",
+      "name": "Lukewarm Ocean",
+      "name_cn": "温水海洋"
+    },
+    {
+      "id": "minecraft:fog_mangrove_swamp",
+      "name": "Mangrove Swamp",
+      "name_cn": "红树林沼泽"
+    },
+    {
+      "id": "minecraft:fog_mega_spruce_taiga",
+      "name": "Mega Spruce Taiga",
+      "name_cn": "巨型云杉针叶林"
+    },
+    {
+      "id": "minecraft:fog_mega_spruce_taiga_mutated",
+      "name": "Mega Spruce Taiga Mutated",
+      "name_cn": "巨型云杉针叶林丘陵"
+    },
+    {
+      "id": "minecraft:fog_mega_taiga",
+      "name": "Mega Taiga",
+      "name_cn": "巨型针叶林"
+    },
+    {
+      "id": "minecraft:fog_mega_taiga_hills",
+      "name": "Mega Taiga Hills",
+      "name_cn": "巨型针叶林丘陵"
+    },
+    {
+      "id": "minecraft:fog_mega_taiga_mutated",
+      "name": "Mega Taiga Mutated",
+      "name_cn": "巨型针叶林丘陵"
+    },
+    {
+      "id": "minecraft:fog_mesa",
+      "name": "Mesa",
+      "name_cn": "恶地"
+    },
+    {
+      "id": "minecraft:fog_mesa_bryce",
+      "name": "Mesa Bryce",
+      "name_cn": "风蚀恶地"
+    },
+    {
+      "id": "minecraft:fog_mesa_mutated",
+      "name": "Mesa Mutated",
+      "name_cn": "恶地高原变种"
+    },
+    {
+      "id": "minecraft:fog_mesa_plateau",
+      "name": "Mesa Plateau",
+      "name_cn": "恶地高原"
+    },
+    {
+      "id": "minecraft:fog_mesa_plateau_stone",
+      "name": "Mesa Plateau Stone",
+      "name_cn": "繁茂的恶地高原"
+    },
+    {
+      "id": "minecraft:fog_mushroom_island",
+      "name": "Mushroom Island",
+      "name_cn": "蘑菇岛"
+    },
+    {
+      "id": "minecraft:fog_mushroom_island_shore",
+      "name": "Mushroom Island Shore",
+      "name_cn": "蘑菇岛岸"
+    },
+    {
+      "id": "minecraft:fog_ocean",
+      "name": "Ocean",
+      "name_cn": "海洋"
+    },
+    {
+      "id": "minecraft:fog_pale_garden",
+      "name": "Pale Garden",
+      "name_cn": "苍白之园"
+    },
+    {
+      "id": "minecraft:fog_plains",
+      "name": "Plains",
+      "name_cn": "平原"
+    },
+    {
+      "id": "minecraft:fog_powder_snow",
+      "name": "Powder Snow",
+      "name_cn": "细雪"
+    },
+    {
+      "id": "minecraft:fog_river",
+      "name": "River",
+      "name_cn": "河流"
+    },
+    {
+      "id": "minecraft:fog_roofed_forest",
+      "name": "Roofed Forest",
+      "name_cn": "黑森林"
+    },
+    {
+      "id": "minecraft:fog_roofed_forest_mutated",
+      "name": "Roofed Forest Mutated"
+    },
+    {
+      "id": "minecraft:fog_savanna",
+      "name": "Savanna",
+      "name_cn": "热带草原"
+    },
+    {
+      "id": "minecraft:fog_savanna_mutated",
+      "name": "Savanna Mutated",
+      "name_cn": "破碎的热带草原"
+    },
+    {
+      "id": "minecraft:fog_savanna_plateau",
+      "name": "Savanna Plateau",
+      "name_cn": "热带高原"
+    },
+    {
+      "id": "minecraft:fog_semi_humid",
+      "name": "Semi-humid"
+    },
+    {
+      "id": "minecraft:fog_soulsand_valley",
+      "name": "Soul Sand Valley",
+      "name_cn": "灵魂沙峡谷"
+    },
+    {
+      "id": "minecraft:fog_stone_beach",
+      "name": "Stone Beach",
+      "name_cn": "石岸"
+    },
+    {
+      "id": "minecraft:fog_sulfur_caves",
+      "name": "Sulfur Caves"
+    },
+    {
+      "id": "minecraft:fog_sunflower_plains",
+      "name": "Sunflower Plains",
+      "name_cn": "向日葵平原"
+    },
+    {
+      "id": "minecraft:fog_swampland",
+      "name": "Swampland",
+      "name_cn": "沼泽"
+    },
+    {
+      "id": "minecraft:fog_swampland_mutated",
+      "name": "Swampland Mutated",
+      "name_cn": "沼泽丘陵"
+    },
+    {
+      "id": "minecraft:fog_taiga",
+      "name": "Taiga",
+      "name_cn": "针叶林"
+    },
+    {
+      "id": "minecraft:fog_taiga_hills",
+      "name": "Taiga Hills",
+      "name_cn": "针叶林丘陵"
+    },
+    {
+      "id": "minecraft:fog_taiga_mutated",
+      "name": "Taiga Mutated",
+      "name_cn": "针叶林山地"
+    },
+    {
+      "id": "minecraft:fog_the_end",
+      "name": "The End",
+      "name_cn": "末地"
+    },
+    {
+      "id": "minecraft:fog_warm_ocean",
+      "name": "Warm Ocean",
+      "name_cn": "暖水海洋"
+    },
+    {
+      "id": "minecraft:fog_warped_forest",
+      "name": "Warped Forest",
+      "name_cn": "诡异森林"
+    }
+  ]
+}
