@@ -44,3 +44,4 @@ app/libs/*.bak
 
 # Build artifacts
 app/release/
+dist/

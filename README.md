@@ -1,8 +1,33 @@
 # Mio
 
+[简体中文](README.md) | [English](README.en.md)
+
 Mio 是一个面向 Android 的 Minecraft 辅助 / 映射引擎宿主应用，核心由 **悬浮窗 UI + DSL 插件系统 + 输入注入 + WebSocket 游戏联动** 组成。
 
 > 本项目主要用于学习、研究与个人使用。请遵守 Minecraft 服务端规则及当地法律法规，不要将本项目用于破坏游戏公平性或任何违法用途。
+
+## 脱机版
+
+当前仓库发布的是 **脱机版（Offline Build）**，特点：
+
+- 启动时跳过服务器校验与版本检查，无网络也能进入主页。
+- 不进入登录 / 注册 / 找回密码 / 论坛 / 会员页面，打开即用。
+- 用户协议内置本地文本，离线状态下也可点击「我同意」。
+- **网络功能仍然保留**：WebSocket 服务、插件下载、在线接口在联网后可正常使用。
+
+### 下载与安装
+
+前往 [Releases](https://github.com/YUNDATAFw/Mio-Keymapper/releases/latest) 下载 APK：
+
+| 文件 | 适用设备 |
+|---|---|
+| `mio-1.2.9-universal.apk` | 通用包，不确定架构时选这个 |
+| `mio-1.2.9-arm64-v8a.apk` | 绝大多数现代 Android 手机 |
+| `mio-1.2.9-armeabi-v7a.apk` | 较老的 32 位设备 |
+
+安装要求：Android 8.0（API 26）及以上。
+
+> 脱机版使用 Debug 签名，若设备上已安装其他签名的 Mio，需要先卸载旧版本再安装。
 
 ## 功能概览
 
@@ -80,7 +105,7 @@ Mio/
    dsl-cli.jar
    ```
 
-3. 编译 Debug APK：
+3. 编译脱机版（Debug）APK：
 
    ```bash
    ./gradlew :app:assembleDebug
@@ -113,7 +138,7 @@ Mio/
 
 ## 当前调试开关
 
-仓库目前保留了便于本地调试的开关，**发布正式版本前请恢复**：
+脱机版保留了以下开关，**发布正式联网版本前请恢复**：
 
 | 位置 | 开关 | 当前值 | 说明 |
 |---|---|---|---|
